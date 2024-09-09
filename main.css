@@ -1,0 +1,1020 @@
+/* google font import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  /* colors */
+  --body-color: #e4e9f7;
+  --sidebar-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #000000;
+  --blue:#2a2185;
+
+  /* =======transition====*/
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+body{
+  height: 100vh;
+  background-color: var(--body-color);
+  transition: var(--tran-05);
+
+}
+body.dark{
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #3a3b3c;
+  --primary-color-light: #3a3b3c;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+
+}
+
+
+
+
+/*====sidebar===*/
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background: var(--sidebar-color);
+  transition: var(--tran-05);
+  z-index: 100;
+}
+.sidebar.close{
+  width: 88px;
+}
+
+/*====reusable CSS======*/
+.sidebar .text{
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: var(--tran-04);
+  white-space: nowrap;
+  opacity: 1;
+}
+.sidebar.close .text{
+  opacity: 0;
+}
+
+.sidebar .image{
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar li{
+  height: 50px;
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar li .icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  font-size: 20px;
+}
+.sidebar li .icon,
+.sidebar li .text{
+  color: var(--text-color);
+  transition: var(--tran-02);
+}
+.sidebar header{
+  position: relative;
+}
+
+.sidebar .image-text img{
+  width: 40px;
+
+}
+.sidebar header .image-text{
+  display: flex;
+  align-items: center;
+}
+header .image-text .header-text{
+  display: flex;
+  flex-direction: column;
+}
+.header-text .name{
+  font-weight: 600;
+}
+.header-text .profession{
+  margin-top: -2px;
+}
+.sidebar header .toggle{
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%) rotate(180deg);
+  height: 25px;
+  width: 25px;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--sidebar-color);
+  font-size: 22px;
+  transition: var(--tran-03);
+}
+.sidebar.close header .toggle{
+  transform: translateY(-50%);
+ 
+}
+
+body.dark .sidebar header .toggle{
+  transform: rotate(180deg);
+  color: var(--text-color);
+}
+.sidebar .menu{
+  margin-top: 35px;
+}
+
+.sidebar .search-box{
+  background: var(--primary-color-light);
+  border-radius: 6px;
+  transition: var(--tran-05);
+}
+.search-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 300;
+  background: var(--primary-color-light);
+  
+}
+.sidebar li a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: var(--tran-04);
+}
+.sidebar li a:hover{
+  background: var(--primary-color);
+}
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text{
+  color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text{
+  color: var(--text-color);
+}
+
+.sidebar .menu-bar{
+  height: calc(100%-50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu-bar .mode{
+  position: relative;
+  border-radius: 6px;
+  background: var(--primary-color-light);
+}
+.menu-bar .mode .moon-sun{
+  height: 50px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+}
+.menu-bar .mode i{
+  position: absolute;
+  transition: var(--tran-03);
+}
+.menu-bar .mode i.sun{
+  opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun{
+  opacity: 1;
+}
+body.dark .menu-bar .mode i.moon{
+  opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch{
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 60px;
+  cursor: pointer;
+  border-radius: 6px;
+  background: var(--primary-color-light);
+  transition: var(--tran-05);
+}
+.toggle-switch .switch{
+  position: relative;
+  height: 22px;
+  width: 44px;
+  border-radius: 25px;
+  background: var(--toggle-color);
+}
+.switch::before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
+  transition: var(--tran-03);
+  
+}
+body.dark .switch::before{
+  left: 24px;
+
+}
+
+
+.wrapper {
+  display: flex;
+  position: relative;
+  right: 0;
+  top: 0;
+}
+
+.wrapper .filter {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  padding: 20px;
+  background: var(--blue);
+  transition: var(--tran-05);
+  z-index: 100;
+  overflow-y: auto;
+  justify-content: space-between;
+}
+
+.wrapper .filter h2 {
+  color: var(--sidebar-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Right-side box integrated into the filter */
+.wrapper .filter .right-side-box {
+  position: relative; /* Change from absolute to relative */
+  top: 0; /* Reset top position */
+  right: 0; /* Reset right margin */
+  margin-bottom: 20px; /* Add spacing after the box */
+  width: 200px; /* Ensure the box takes full width of the filter */
+  height: 200px;
+  padding: 15px;
+  background-color: var(--blue);
+  border: 5px solid var(--blue);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.wrapper .filter .right-side-box select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: var(--blue);
+  color: var(--sidebar-color);
+  font-size: 15px;
+}
+
+.wrapper .filter .dropdown-container {
+  margin-top: 10px;
+}
+
+.wrapper .filter .dropdown {
+  position: relative;
+}
+
+.filter{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background: var(--sidebar-color);
+  transition: var(--tran-05);
+  z-index: 100;
+  overflow-y: auto;
+}
+
+aside{
+  background: orange;
+  justify-content: center;
+}
+
+aside img{
+  width: 100px;
+  margin: 15px;
+  margin-left: 50px;
+  border-radius: 50%;
+  border: 3px solid #000000;
+}
+
+aside h1{
+  text-align: center;
+  margin-top: -15px;
+  font-size: 25px;
+  letter-spacing: 2px;
+  padding-bottom: 3px;
+}
+
+.pub{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.pub .item{
+  position: relative;
+  cursor: pointer;
+}
+
+.pub .item a{
+  color: var(--text-color);
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  padding: 5px 30px;
+  line-height: 45px;
+}
+
+.item i{
+  margin-right: 15px;
+}
+.filter::-webkit-scrollbar{
+  width: 0px;
+}
+
+.item a .drop{
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  transition: var(--tran-03);
+}
+
+.item .sub-pub{
+  background: var(--sidebar-color);
+  display: none;
+  padding-left: 20px;
+}
+
+.item.active .sub-pub{
+  display: block;
+}
+.item.active .drop {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+.filter .item a:hover{
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+.pub .item a:hover{
+  color: var(--sidebar-color);
+}
+body.dark .filter .pub .item a:hover {
+  color: var(--text-color);
+}
+.sub-pub {
+  display: none;
+}
+
+.sub-pub.open {
+  display: block;
+}
+
+.item.active > a {
+  color: #007bff; /* Example: highlight the active item */
+}
+
+
+/* Container to hold the select elements */
+#select-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px; /* Adjust width as needed */
+  gap: 10px; /* Space between select elements */
+  margin: 20px;
+}
+
+#select-container select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  appearance: none;
+}
+
+/* Optional: Add hover effect */
+#select-container select:hover {
+  border-color: #695cfe;
+}
+.home{
+  position: relative;
+  left: 250px;
+  height: 100vh;
+  width: calc(100% - 250px);
+  background: var(--body-color);
+  transition: var(--tran-03);
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar.close~ .home{
+  left: 88px;
+  width: calc(100% - 88px);
+}
+.publication {
+  /* Remove absolute positioning and fixed dimensions */
+  position: relative;
+  transform: translateX(10px) translateY(240px);
+  width: auto;
+  max-width: 75%; /* Allow the container to fill available space */
+  flex-grow: 1;
+  max-height: fit-content;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  background: white;
+  flex-grow: 1; /* Allow the content area to grow and take up the remaining space */
+  transition: all 0.3s ease;
+  height: 450px;
+  border: 2px solid white;
+   /* Allow the container to grow with its parent */
+  /* ... other styles ... */
+}
+
+/* Remove unnecessary styles */
+.publication .table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensures fixed width for columns */
+  /* ... other styles ... */
+}
+.publication .table th,
+.publication .table td{
+  width: 200px;
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+  overflow: hidden; /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) */
+  white-space: nowrap; /* Prevents text from wrapping */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+.publication .table thead th {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick the header to the top */
+  background-color: #f1f1f1; /* Background color of the sticky header */
+  z-index: 1; /* Ensure the header stays above the table body */
+  }
+
+/* Adjust column width based on screen size */
+@media (max-width: 1200px) {
+  .publication .table th,
+  .publication .table td {
+    width: 150px; /* Adjust column width as needed */
+  }
+}
+
+@media (max-width: 992px) {
+  .publication .table th,
+  .publication .table td {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .publication .table th,
+  .publication .table td {
+    width: 80px;
+  }
+}
+.selected-staff .img {
+  width: 150px; /* Set the desired width */
+  height: auto; /* Auto height to maintain aspect ratio */
+  margin: 10px auto; /* Center the image horizontally */
+  display: block; /* Ensure the image is displayed as a block-level element */
+  border-radius: 50%; /* Make the image circular, if desired */
+  border: 3px solid #ddd; /* Add a border */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for better look */
+  }
+
+
+.filter sider input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 10%;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+   }
+sider .staffList p {
+    display: none;
+}
+
+.departmentTable {
+  /* Remove absolute positioning and fixed dimensions */
+  position: relative;
+  transform: translateX(10px) translateY(240px);
+  width: auto;
+  max-width: 75%; /* Allow the container to fill available space */
+  flex-grow: 1;
+  max-height: fit-content;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  background: white;
+  flex-grow: 1; /* Allow the content area to grow and take up the remaining space */
+  transition: all 0.3s ease;
+  height: 450px;
+  border: 2px solid white;
+   /* Allow the container to grow with its parent */
+  /* ... other styles ... */
+}
+
+/* Remove unnecessary styles */
+.departmentTable .publicationTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensures fixed width for columns */
+  /* ... other styles ... */
+}
+.departmentTable .publicationTable th,
+.departmentTable .publicationTable td{
+  width: 200px;
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+  overflow: hidden; /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) */
+  white-space: nowrap; /* Prevents text from wrapping */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+.departmentTable .publicationTable thead th {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick the header to the top */
+  background-color: #f1f1f1; /* Background color of the sticky header */
+  z-index: 1; /* Ensure the header stays above the table body */
+  }
+
+/* Adjust column width based on screen size */
+@media (max-width: 1200px) {
+  .departmentTable .publicationTable th,
+  .departmentTable .publicationTable td {
+    width: 150px; /* Adjust column width as needed */
+  }
+}
+
+@media (max-width: 992px) {
+  .departmentTable .publicationTable th,
+  .departmentTable .publicationTable td {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content .departmentTable th,
+  .main-content .departmentTable td {
+    width: 80px;
+  }
+}
+
+
+
+.collegeTable {
+  /* Remove absolute positioning and fixed dimensions */
+  position: relative;
+  transform: translateX(10px) translateY(240px);
+  width: auto;
+  max-width: 75%; /* Allow the container to fill available space */
+  flex-grow: 1;
+  max-height: fit-content;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  background: white;
+  flex-grow: 1; /* Allow the content area to grow and take up the remaining space */
+  transition: all 0.3s ease;
+  height: 450px;
+  border: 2px solid white;
+   /* Allow the container to grow with its parent */
+  /* ... other styles ... */
+}
+
+/* Remove unnecessary styles */
+.collegeTable .collegePublication {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensures fixed width for columns */
+  /* ... other styles ... */
+}
+.collegeTable .collegePublication th,
+.collegeTable .collegePublication td{
+  width: 200px;
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+  overflow: hidden; /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) */
+  white-space: nowrap; /* Prevents text from wrapping */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+.collegeTable .collegePublication thead th {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick the header to the top */
+  background-color: #f1f1f1; /* Background color of the sticky header */
+  z-index: 1; /* Ensure the header stays above the table body */
+  }
+
+/* Adjust column width based on screen size */
+@media (max-width: 1200px) {
+  .collegeTable .collegePublication th,
+  .collegeTable .collegePublication td {
+    width: 150px; /* Adjust column width as needed */
+  }
+}
+
+@media (max-width: 992px) {
+  .collegeTable .collegePublication th,
+  .collegeTable .collegePublication td {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content .collegePublication th,
+  .main-content .collegePublication td {
+    width: 80px;
+  }
+}
+
+
+
+/* Loading Spinner Styles */
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid blue;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* General Button Styles */
+button {
+  background-color: #3498db; /* Default Blue background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding around the text */
+  border: none; /* Remove default borders */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+  margin: 5px; /* Space between buttons */
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Button Active (Click) Effect */
+button:active {
+  background-color: #1c5980; /* Even darker blue on click */
+  transform: scale(1); /* Reset scale on click */
+}
+
+/* Specific Button Styles */
+#exportStaffExcel {
+  background-color: orange; /* Green background */
+}
+
+#exportStaffExcel:hover {
+  background-color: brown; /* Darker green on hover */
+}
+
+#exportStaffPDF {
+  background-color: blue; /* Red background */
+}
+
+#exportStaffPDF:hover {
+  background-color: orange; /* Darker red on hover */
+}
+
+#exportDeptExcel {
+  background-color: orange; /* Yellow background */
+}
+
+#exportDeptExcel:hover {
+  background-color: #d4ac0d; /* Darker yellow on hover */
+}
+
+#exportDeptPDF {
+  background-color: blue; /* Orange background */
+}
+
+#exportDeptPDF:hover {
+  background-color: #d35400; /* Darker orange on hover */
+}
+
+#exportCollegeExcel {
+  background-color: orange; /* Purple background */
+}
+
+#exportCollegeExcel:hover {
+  background-color: #8e44ad; /* Darker purple on hover */
+}
+
+#exportCollegePDF {
+  background-color: blue; /* Turquoise background */
+}
+
+#exportCollegePDF:hover {
+  background-color: #16a085; /* Darker turquoise on hover */
+}
+
+
+
+
+#yearSelect {
+  /* General styling */
+  width: 90%;
+  padding: 10px;
+  margin: 0px 10%;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  appearance: none; /* Hide default arrow */
+
+
+}
+
+
+
+.summary-table {
+  /* Remove absolute positioning and fixed dimensions */
+  position: relative;
+  transform: translateX(10px) translateY(280px);
+  width: auto;
+  max-width: 75%; /* Allow the container to fill available space */
+  flex-grow: 1;
+  max-height: fit-content;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  background: white;
+  flex-grow: 1; /* Allow the content area to grow and take up the remaining space */
+  transition: all 0.3s ease;
+  height: 150px;
+  border: 2px solid white;
+   /* Allow the container to grow with its parent */
+  /* ... other styles ... */
+}
+
+/* Remove unnecessary styles */
+.summary-table .table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensures fixed width for columns */
+  /* ... other styles ... */
+}
+.summary-table .table th,
+.summary-table .table td{
+  width: 200px;
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+  overflow: hidden; /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) */
+  white-space: nowrap; /* Prevents text from wrapping */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+.summary-table .table thead th {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick the header to the top */
+  background-color: #f1f1f1; /* Background color of the sticky header */
+  z-index: 1; /* Ensure the header stays above the table body */
+  }
+
+/* Adjust column width based on screen size */
+@media (max-width: 1200px) {
+  .summary-table .table th,
+  .summary-table .table td {
+    width: 150px; /* Adjust column width as needed */
+  }
+}
+
+@media (max-width: 992px) {
+  .summary-table .table th,
+  .summary-table .table td {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .summary-table .table th,
+  .summary-table .table td {
+    width: 80px;
+  }
+}
+
+
+
+.departmentSummary {
+  /* Remove absolute positioning and fixed dimensions */
+  position: relative;
+  transform: translateX(10px) translateY(280px);
+  width: auto;
+  max-width: 75%; /* Allow the container to fill available space */
+  flex-grow: 1;
+  max-height: fit-content;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  background: white;
+  flex-grow: 1; /* Allow the content area to grow and take up the remaining space */
+  transition: all 0.3s ease;
+  height: 200px;
+  border: 2px solid white;
+   /* Allow the container to grow with its parent */
+  /* ... other styles ... */
+}
+
+/* Remove unnecessary styles */
+.departmentSummary .summaryTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensures fixed width for columns */
+  /* ... other styles ... */
+}
+.departmentSummary .summaryTable th,
+.departmentSummary .summaryTable td{
+  width: 200px;
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+  overflow: hidden; /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) */
+  white-space: nowrap; /* Prevents text from wrapping */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+.departmentSummary .summaryTable thead th {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick the header to the top */
+  background-color: #f1f1f1; /* Background color of the sticky header */
+  z-index: 1; /* Ensure the header stays above the table body */
+  }
+
+/* Adjust column width based on screen size */
+@media (max-width: 1200px) {
+  .departmentSummary .summaryTable th,
+  .departmentSummary .summaryTable td {
+    width: 150px; /* Adjust column width as needed */
+  }
+}
+
+@media (max-width: 992px) {
+  .departmentSummary .summaryTable th,
+  .departmentSummary .summaryTable td {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .departmentSummary .summaryTable th,
+  .departmentSummary .summaryTable td {
+    width: 80px;
+  }
+}
+
+
+
+.collegeSummaryTable {
+  /* Remove absolute positioning and fixed dimensions */
+  position: relative;
+  transform: translateX(10px) translateY(280px);
+  width: auto;
+  max-width: 75%; /* Allow the container to fill available space */
+  flex-grow: 1;
+  max-height: fit-content;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  background: white;
+  flex-grow: 1; /* Allow the content area to grow and take up the remaining space */
+  transition: all 0.3s ease;
+  height: 200px;
+  border: 2px solid white;
+   /* Allow the container to grow with its parent */
+  /* ... other styles ... */
+}
+
+/* Remove unnecessary styles */
+.collegeSummaryTable .collegeSummary {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensures fixed width for columns */
+  /* ... other styles ... */
+}
+.collegeSummaryTable .collegeSummary th,
+.collegeSummaryTable .collegeSummary td{
+  width: 200px;
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+  overflow: hidden; /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) */
+  white-space: nowrap; /* Prevents text from wrapping */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+.collegeSummaryTable .collegeSummary thead th {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick the header to the top */
+  background-color: #f1f1f1; /* Background color of the sticky header */
+  z-index: 1; /* Ensure the header stays above the table body */
+  }
+
+/* Adjust column width based on screen size */
+@media (max-width: 1200px) {
+  .collegeSummaryTable .collegeSummary th,
+  .collegeSummaryTable .collegeSummary td {
+    width: 150px; /* Adjust column width as needed */
+  }
+}
+
+@media (max-width: 992px) {
+  .collegeSummaryTable .collegeSummary th,
+  .collegeSummaryTable .collegeSummary td {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .collegeSummaryTable .collegeSummary th,
+  .collegeSummaryTable .collegeSummary td {
+    width: 80px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
