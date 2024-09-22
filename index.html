@@ -8,90 +8,12 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  
-  <input type="checkbox" id="check">
-  <label for="check">
-      <i class='bx bx-menu icon' id="btn"></i>
-      <i class='bx bx-x icon' id="cancel"></i>
-  </label>
+
   <nav class="sidebar close">
-      <header>
-        <div class="image-text">
-          <span class="image">
-           <img src="C:\Users\Admin\application\images\logo.png" alt="">
-          </span>
-          <div class="text header-text">
-            <span class="name">ResearchersCafe</span>
-            <span class="profession">Corner</span>
-          </div>
-        </div>
-      </header>
-      <div class="menu-bar">
-        <div class="menu">
-   
-         <ul class="menu-links">
-           <ul class="menu-links">
-             <li class="nav-links">
-                 <a href="#" id="home-nav">
-                     <i class='bx bx-home icon'></i>
-                     <span class="text nav-text">Home</span>
-                 </a>
-             </li>
-         
-             <li class="nav-links">
-                 <a href="#" id="history-nav">
-                     <i class='bx bx-history icon'></i>
-                     <span class="text nav-text">Search History</span>
-                 </a>
-             </li>
-         
-             <li class="nav-links">
-                 <a href="#" id="report-nav">
-                     <i class='bx bxs-report icon'></i>
-                     <span class="text nav-text">Report</span>
-                 </a>
-             </li>
- 
-         
-             <li class="nav-links">
-                 <a href="#" id="user-nav">
-                     <i class='bx bx-user-plus icon'></i>
-                     <span class="text nav-text">Users</span>
-                 </a>
-             </li>
-  
-         
-             <li class="nav-links">
-                 <a href="#" id="settings-nav">
-                     <i class='bx bx-cog icon'></i>
-                     <span class="text nav-text">Settings</span>
-                 </a>
-             </li>
-         </ul>
-         
-       </div>
-        <div class="bottom-content">
-          <li class="nav-links">
-            <a href="#">
-              <i class='bx bx-log-out icon' ></i>
-              <span class="text nav-text">Sign Out</span>
-            </a> 
-          </li>
-          <li class="mode">
-            <div class="moon-sun">
-              <i class='bx bxs-moon icon moon' ></i>
-              <i class='bx bx-sun icon sun' ></i>
-            </div>
-            <span class="mode-text text">Dark Mode</span>
-            <div class="toggle-switch">
-              <span class="switch"></span>
-            </div>
-           </li>
- 
-         </div>
-      </div>
+
     </nav>
    <div class="home">
+    
     <div id="selected-staff">
       <img id="staff-image" src="" alt="Staff Image" style="display:none;" width="150" height="150">
       <div id="selected-staff-name"></div>
@@ -104,36 +26,80 @@
     <img id="departmentImage" src="" alt="Department Image" style="width: 100px; height: 100px;">
     <h3 id="departmentName"></h3>
 </div>
+<div id="universityHeader">
+  <img src="images/logo.png" alt="University Logo">
+  <h2>University of Dar Es Salaam</h2>
+</div>
 
-    <div class="collegeTable">
-      <table class="collegePublication">
-        <thead>
-          <tr>
-            <th>Department</th>
-            <th>Staff Name</th>
-            <th>Total Journals</th>
-            <th>Total Conferences</th>
-            <th>Total Unknown</th>
-            <th>Total Publications</th>
-          </tr>
-        </thead>
-        <tbody id="collegeBody">
-          <!-- Rows will be populated dynamically -->
-        </tbody>
-        <tfoot>
-          <tr>
-            <th colspan="2">Total for College</th>
-            <th id="totalJournals">0</th>
-            <th id="totalBookTitles">0</th>
-            <th id="totalNaN">0</th>
-            <th id="totalPublications">0</th>
-          </tr>
-        </tfoot>
-      </table>
-      <button id="exportCollegeExcel">Export as Excel</button>
-      <button id="exportCollegePDF">Export as PDF</button>
-    </div>
 
+
+<div id="universityTableContainer">
+  <table class="universityTablee">
+    <thead>
+      <tr>
+        <th>College Name</th>
+        <th>Number of Departments</th>
+        <th>Number of Staff</th>
+        <th>Number of Citations (title_cites)</th>
+        <th>Number of H-index</th>
+        <th>Number of i10-index</th>
+        <th>Number of Journals</th>
+        <th>Number of Book Titles</th>
+        <th>Number of NaN</th>
+        <th>Total Publications</th>
+      </tr>
+    </thead>
+    <tbody id="universityBody">
+      <!-- Rows for each college will be added dynamically here -->
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Overall Totals</td>
+        <td id="totalCitations"></td>
+        <td id="totalHIndex"></td>
+        <td id="totalI10Index"></td>
+        <td id="totalJournals"></td>
+        <td id="totalBookTitles"></td>
+        <td id="total0"></td>
+        <td id="totalPublications"></td>
+      </tr>
+    </tfoot>
+    
+  </table>
+</div>
+
+
+
+   
+
+<div class="collegeTable">
+  <table class="collegePublication">
+    <thead>
+      <tr>
+        <th>Department</th>
+        <th>Staff Name</th>
+        <th>Total Journals</th>
+        <th>Total Conferences</th>
+        <th>Total Books</th>
+        <th>Total Publications</th>
+      </tr>
+    </thead>
+    <tbody id="collegeBody">
+      <!-- Rows will be populated dynamically -->
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="2">Total for College</th>
+        <th id="totalJournals">0</th>
+        <th id="totalConferences">0</th>
+        <th id="totalBooks">0</th>
+        <th id="totalPublications">0</th>
+      </tr>
+    </tfoot>
+  </table>
+  <button id="exportCollegeExcel">Export as Excel</button>
+  <button id="exportCollegePDF">Export as PDF</button>
+</div>
     <div class="departmentTable">
       <table class="publicationTable">
         <thead>
@@ -141,7 +107,7 @@
             <th>Staff Name</th>
             <th>Total Journals</th>
             <th>Total Conferences</th>
-            <th>Total Unknown</th>
+            <th>Total Books</th>
             <th>Total Publications</th>
           </tr>
         </thead>
@@ -153,7 +119,7 @@
             <th>Total for Department</th>
             <th id="deptTotalJournals">0</th>
             <th id="deptTotalBookTitles">0</th>
-            <th id="deptTotalNaN">0</th>
+            <th id="deptTotal0">0</th>
             <th id="deptTotalPublications">0</th>
           </tr>
         </tfoot>
@@ -175,8 +141,6 @@
                           <th>TITLE</th>
                           <th>LINK</th>
                           <th>YEAR</th>
-                          <th>H_INDEX</th>
-                          <th>I10_INDEX</th>
                           <th>TITLE_CITES</th>
                           <th>AUTHORS</th>
                           <th>JOURNAL</th>
@@ -194,12 +158,54 @@
               <button id="exportStaffPDF">Export as PDF</button>
           </div>
       </div>
+      <div>
+        <canvas id="citationsChart"></canvas>
+      </div>
+      <div>
+        <canvas id="departmentChart" ></canvas>
+      </div>
+      <div>
+        <canvas id="collegeChart" ></canvas>
+      </div>
+      <div>
+        <canvas id="universityChart" ></canvas>
+      </div>
+      <div>
+        <!-- HTML -->
+        <canvas id="publicationsPieChart" ></canvas>
+      </div>
+      <div>
+        <canvas id="departmentPublicationsPieChart" ></canvas>
+      </div>
+      <div>
+        <canvas id="collegePublicationsPieChart" ></canvas>
+      </div>
+      <canvas id="universityPublicationsPieChart" width="400" height="400"></canvas>
+      <button id="drawUniversityChart">Draw University Chart</button>
+      <canvas id="universityChart" width="800" height="400"></canvas>
+      <button id="createBarChartBtn">Create University Chart</button>
+      <div class="chart-container">
+          <canvas id="universityChartNew"></canvas>
+      </div>
+
+
+
+     <!-- Containers for the tables -->
+     <div id="staffRankingTableContainer"></div>
+     <div id="publicationRankingTableContainer"></div>
+  
+  
+
+      
+
 
       <div class="filter">
        <aside>
             <img src="C:\Users\Admin\new-electron-app\images\me.jpeg" alt="">
-            <h1>Publications</h1>
+            <h1>ResearchersCafe</h1>
+            <h1>Corner</h1>
        </aside>
+       
 
         <div id="select-container">
             <select id="college" onchange="populateDepartments()">
@@ -240,10 +246,9 @@
         <select id="yearSelect">
           <option value="all">All Years</option>
         </select>
+        <button id="topRankedStaffButton">Top Ranked Staff</button>
+        <button id="topRankedPublicationButton">Top Ranked Publication</button>
 
-
-
-      
         <div class="pub">
 
 
@@ -262,7 +267,8 @@
           <div class="item"><a href="#"><i class='bx bx-book-reader icon'></i>Articles</a></div>
           <div class="item"><a href="#"><i class='bx bx-book-bookmark icon'></i>Books</a></div>
           <div class="item"><a href="#"><i class='bx bx-spreadsheet icon'></i>Conferences</a></div>
-          
+                  <div class="bottom-content">
+
       </div>
       
     </div>
@@ -277,14 +283,11 @@
   <!-- Staff, Department, and College data will be displayed here -->
 </div>
 
-<div class="graphs-container">
-  <h3>Citations per Year</h3>
-  <canvas id="citationsChart"></canvas>
-</div>
 
 
 
-    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -293,29 +296,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 <!-- Include jsPDF library -->
 
-
-    
-    
-
   <script>
 
 
 
-    const body = document.querySelector("body"),
-          sidebar = body.querySelector(".sidebar"),
-          toggle = body.querySelector(".btn"),
-          modeSwitch = body.querySelector(".toggle-switch"),
-          modeText = body.querySelector(".mode-text");
-          home = body.querySelector(".home"),
-          modeSwitch.addEventListener("click",()=>{
-            body.classList.toggle("dark");
-
-            if(body.classList.contains("dark")){
-              modeText.innerText = "Light Mode"
-            }else{
-              modeText.innerText = "Dark Mode"
-            }
-          });
         
 
   var staffImages = {
@@ -399,7 +383,7 @@
    UDBS:["General_Management","Accounting","Finance","Marketing"],
    SoMG:["Petroleum_Science_and_Engineering","Mining_and_Mineral_Processing_Engineering","Geosciences"],
    SJMC:["SJMC"],
-   SoED:["Physical_Education_and_Sport_Sciences","Educational_Psychology_and_Curriculm_Studies","Educational_Foundations_Mnagement_and_Lifelong_Learning"],
+   SoED:["Physical_Education_and_Sport_Sciences","Educational_Psychology_and_Curriculm_Studies","Educational_Foundations_Management_and_Lifelong_Learning"],
    SoAF:["Aquatic_Sciences_and_Fisheries_Technology","Aquaculture_Technology"],
    MCHAS:["Obstetrics","Dental","Parasitology","Social_Sciences","Pathology","Biochemistry","Paediatrics","Internal_Medicine","Otorhinolaryngology","Radiology","Orthopedics","Obstetrics","Surgery"],
    MRI:["Mining","Geology","MRI_Nzega"],
@@ -407,7 +391,7 @@
    IRA:["IRA"],
    CoAF:["Food_Science_and_Technology","Crop_Sciences_and_Beekeeping_Technology","Agricultural_Engineering","Agricultural_Economics_and_Business"],
    CoET:["Political_Science_and_Public_Administration_COET","Chemical_and_Mining_Engineering","Transportation_and_Geo_Technical_Engineering","Structural_and_Construction_Engineering","Electrical_Engineering","Machenical_and_Industrial_Engineering","Water_Resources_Engineering"],
-   CoICT: ["CSE", "ETE"],
+   CoICT: ["Computer_Science_and_Engineering", "Electronics_and_Telecommunications_Engineering"],
    CoNAS:["Zoology_and_Wild_Conservation","Mathematics","Chemistry","Molecular_Biology_and_Biotechnology","Botany","Physics"],
    CoSS:["Geography","Political_Science_and_Public_Administration_CoSS","Statistics","Sociology"],
    CoHU:["Political_Science_and_Public_Administration_CoHU","Creative_Arts","Foreign_Language_and_Linguistics","History","Archaeology_and_Heritage_Studies","Literature","Center_of_Communication_Studies","Philosophy_and_Religious_Studies"],
@@ -424,8 +408,8 @@
     Faculty_of_Science: ["Godlisten Namwel Shao", "Lewis Atugonza Mtashobya", "Olotu lwatasia  Moses", "Talam Kibona Enock", "Washa Bugalama Washa", "Chacha Stephen Chacha", "Benito Gaspar Mng'ong'o", "Edson Barongo Ishengoma", "Ismail Jacob Irunde", "Juma Abdallah Mmongoyo", "Vandeline Emmanuel Tairo", "Amina Issa Msonga", "Amos Vincent Ntarisa", "Anna Ndele Mwambala", "Christina Fabian Pius", "Elianaso Elimbinzi Kimambo", "Emmanuel Rasiel Ollotu", "Fikira Said Kimbokota", "Herieth Rhodes Mero", "Jovine Kamuhabwa Emmanuel", "Mbwiga Sote Aloni", "Mwasunda Angolwisye Joshua", "Regina Geofrey Nyakale", "Robert Christopher Mwita", "Stephano Mlozi Hanolo", "John Ndila Mlyahilu", "Asha Said Kalula", "Biseko Juma Mafwele", "Casiana Blasius Lwiwa", "Cosmas Herman Magashi", "Debora John Mahushi", "Edwin John Kambo", "Emmanuel Essau Chanai", "Erick Appolinary Kyojo", "Fanuel Josephat Ligate", "Faraja Buyonga Luhanda", "Fednand Cosmas Kindole", "Flaviana John Ngabala", "Geogrey Wingi Sikazwe", "Germana William Mlay", "Ida Aloyce Mrema", "Japhet Nyanda Shelembi", "Joyce kalitus Ndauka", "Masanja Bulloh Shadrack", "Modestus Vicent Leopord", "Nzaganya Edson Nzaganya", "Okinyi David Alila", "Plassidius Joachim Chengula", "Rehema Iddi Mrutu", "Richard Paul Clement", "Saada Michael Mbepera", "Venance Theophil Msoffe", "Wambura Masanda Wambura", "Anastazia Tarimo Felix", "Abdueli Paulo Mdee", "Joseph Mugyabuso"],
     Faculty_of_Humanities_and_Social_Sciences: ["David James Manyerere", "Evaristo Mwasigwavingi Haulle", "Helena Eliasi Myeya", "Jerzy Roman Gilsrowsiki", "Francisco Paul Mugizi", "Japhace Balwegilila Poncian", "Ashura Jackson Ngoya", "Cornell Joseph Mlacha", "Edward Simon Mgaya", "Fokas Alois Nchimbi", "Francis Gerord Kilowoko", "Gervas Ansigary Kawonga", "Michael Elias Mgalula", "Philpo John Gwevu", "Sospeter Charles Jibunge", "Ubaya Simon Msemwa", "Aneth William Kasebele", "Chakupewa Joseph Mpambije", "Christopher Aron Mulungu", "Evarist Fundisha Swai", "Jaah Mkupete Mkupete", "Livini Tesha Donath", "Michael Joel Kalenge", "Mirau Ndetaulwa Mbise", "Pauline Gervas Mhango", "Pendo Alfred Mwashota", "Ponsiano Sawaka Kanijo", "Salehe Kaoneke Salehe", "Shakila Halifan Mteti", "Spemba Elias Spemba", "Tiemo Romward Haule", "Titus Mwita Ombori", "Anasia Elingaya Saria", "Anatoria Kyando Joel", "Anselmina Albin Shinyaka", "Astelia Kululinda Mihayo", "Augustino Amos Kagwema", "Bungaya Dughangw Mayo", "Charles Nyanduru Maggati", "Claudio George Kisake", "Deograsia Ramadhan Mtego", "Elimu Kuhanga Dimbwe", "Florence Godfrey Tarimo", "Gabriel Kanuti Ndimbo", "Grolia Vicenti Kimbi", "Hamidu Ami Seki", "Herman Stephan Luoga", "Irene Fredolin Ngoti", "Jane Edward Norman King", "Jeno Francis Kidasi", "Jonas Shashen Leonard", "Lucy Joseph Kassian", "Masolwa Ngasila Pima", "Maulid Issah Kiruya", "Michael Greyson Mgonja", "Mussa Ndyanyi Kassimu", "Nuru Lutengano Kibiki", "Palme Thadey Kawishe", "Winne Stephen Mtega", "Yasinta Vedasto Mwenda", "Yusuph Rajabu Daudi", "Mwalusamba Rwanda Samson", "Alfred Mathias Aron", "Auson Njunwensi Wincheslaus", "Dietram Efrem Mgeni", "Godfrey Frugence Philemon", "Hazina Mwaitalako Charles", "Kelvin Atilio Haule", "Mariana Julius Shirima", "Nsajigwa Ipyana Mwankemwa", "Rukia Jackson Ngoya", "Samwel Mashinya Nkwabi", "Sweetbert Mugizi Anselimus", "Berson Filemon Kachira", "Emanuel Nyambura Casmiry", "Kabuche Nicolous Kanizi", "Meshack Lutoba Madata", "Mesia Aston Simbeye", "Samuel Thomas Joseph", "Sauli Lingson Kalinga", "Tumsifu Samson Mwanjala", "Zacharia Mtemba Bihiye", "Daudi Edward Daudi", "Isaya Michael Madenge", "Johari Juma Ikombola", "Mustapha Muhidini Juma", "Mwemezi Emmanuel Philemon", "Nshoma Sesaguli Ngasa", "Saidi Silas Janja", "Mahenge Jagadi"],
     Faculty_of_Education:["Daniel Sidney Fussy", "Jaquiline Amani Moshi", "Selina Thomas Mkimbili", "Hassan Iddy Hassan", "Joseph Reginard Milinga", "Orestes Silverius Kapinga", "Oscar Joel Magava", "Adella Raymond Mtey", "Christina Nelson Mbilinyi", "Hawa Mohamed Mpate", "John Fungulupembe Kalolo", "Mariana Manyus Mhewa", "Ndomondo Shaban Eunice", "Vicent Jalang'o Cosmas",  "Andrea Alfred Lazaro", "Anna Benson Boreka", "Aristedes Zas Mdemu", "Ayubu Ismail Ngao", "Baraka Gaitan Luvanga", "Beni Twiseghe Mbwile", "Daudi Heriel Mrema", "Doris Largus Mosha", "Elizabeth Elias Makishe", "Ezelina Angetile Kibonde", "Fedy Speditho Magidanga", "Fourunatha Lawrence Mtesigwa", "Getrude Marko Mkinga", "Honorata Joseph Kihaga", "Jubilate Rogathe Shuma", "Kennedy Dastan Kaduma", "Loti Isaya Kambey", "Manaseh Mkanga Aaron", "Monica Asagwile Mwakifuma", "Mussa Stephano Amos", "Nabwera Hassan Rashid", "Philbert Epafras Msaki","Upendo Jeremiah Mdugo", "Venance Mallya Paulo", "Wakati Mgelavanu Maliva", "Willy Joseph Kasuga", "Zedekian Nyagawa Malyatangas", "Aziel Emmanuel Kibuka", "Christopher Lagwen Ongo", "Emmanuel Benito Mng'ong'o", ""],
-    CSE: ["Abdulla Faki Ally", "Alexander Rogath Kivaisi", "Ally Tahir Bitebo", "Anthony Joseph Kigombola", "Aron Wajanga Kandoro", "Bernard Noel Mussa", "Betty Mkatasa Mbwilo", "Brighton Heriel Lema", "Daudi Charles Mnyanghwalo", "Diana Severine Rwegasira", "Ellen Ambakisye Kalinga", "Fatuma Ikuja Simba", "Fortunatus Kawasa", "Godfrey Njulumi Justo", "Hassan Omary Muhomi", "Hellen Henry Maziku", "Henrick Leonard Mwasita", "Henry Kalisti Lamshai", "Herrieth John Machiwa", "Honest Christopher Kimaro", "Hussein Sudi Lema", "Jacqueline Damas", "James Samwel Chambua", "Jimmy Tibangayuka Mbelwa", "Joel Samson Mtebe", "Joseph Cosmas Mushi", "Juma Hemed Lungo", "Kennedy Frank Mwakisole", "Leonard Peter Binamungu", "Lilian Emmanuel Mkonyi", "Mahadia Ally Tunga", "Marco Masembo", "Masoud Hussein Mahundi", "Mathew John Mndeme", "Mercy Ellyns Mbise", "Merina Luambano Marcelino", "Mwita Michael Sogorya", "Ruthbetha Beatus Kateule", "Salome  Maro", "Twahir Abasi Kiobya", "Wilbard Bilungi Nyamwihula", "Wilfred Felix Senyoni", "Yona Andegelile", "Zaituni Anthony Kaijage", "Simon Mang'ombe Machera", "Shaban Ramadhan Hando", "Henry Salvatory Mkama", "Richard Michael Mkechera"],
-    ETE: ["Abdi Talib Abdalla", "Alfred John Mwambela", "Angelina Zachary Misso", "Arnold Exaudy Matemu", "Baraka Jacob Maiseli", "Christine Mwase", "Collether Nyalusi John", "Eva Ibrahim Shayo", "Florian Mkemwa", "Godfrey William Chugulu", "Godwin Mruma Gadiel", "Hadija Ramadhani Mbembati", "Hashimu Uledi Iddi", "Hubert Gideon Msuya", "Iddy Ridhaa Swalehe", "Isack Emmanuel Bulugu", "James Silayo Michael", "Josephati Mng'ong'o", "Josephine Kalekwa Stephen", "Josiah Patrick Nombo", "Khadija Mkocha", "Kwame Sakum Ibwe", "Libe Valentine Massawe", "Marshed Kassim Mohamed", "Moses Ismail Mchome", "Mussa Muhidini Kissaka", "Nassor Ally Nassor", "Nelson Tito Kimaro", "Rahabu Frank Mwang'amba", "Salim Mohamed Yahya", "Samwel Eliya Kimambo", "Shamte Juma Kawambwa", "Shililiandumi Naiman", "Thobius Joseph", "Fikiri Salum Uledi"],
+    Computer_Science_and_Engineering: ["Abdulla Faki Ally", "Alexander Rogath Kivaisi", "Ally Tahir Bitebo", "Anthony Joseph Kigombola", "Aron Wajanga Kandoro", "Bernard Noel Mussa", "Betty Mkatasa Mbwilo", "Brighton Heriel Lema", "Daudi Charles Mnyanghwalo", "Diana Severine Rwegasira", "Ellen Ambakisye Kalinga", "Fatuma Ikuja Simba", "Fortunatus Kawasa", "Godfrey Njulumi Justo", "Hassan Omary Muhomi", "Hellen Henry Maziku", "Henrick Leonard Mwasita", "Henry Kalisti Lamshai", "Herrieth John Machiwa", "Honest Christopher Kimaro", "Hussein Sudi Lema", "Jacqueline Damas", "James Samwel Chambua", "Jimmy Tibangayuka Mbelwa", "Joel Samson Mtebe", "Joseph Cosmas Mushi", "Juma Hemed Lungo", "Kennedy Frank Mwakisole", "Leonard Peter Binamungu", "Lilian Emmanuel Mkonyi", "Mahadia Ally Tunga", "Marco Masembo", "Masoud Hussein Mahundi", "Mathew John Mndeme", "Mercy Ellyns Mbise", "Merina Luambano Marcelino", "Mwita Michael Sogorya", "Ruthbetha Beatus Kateule", "Salome  Maro", "Twahir Abasi Kiobya", "Wilbard Bilungi Nyamwihula", "Wilfred Felix Senyoni", "Yona Andegelile", "Zaituni Anthony Kaijage", "Simon Mang'ombe Machera", "Shaban Ramadhan Hando", "Henry Salvatory Mkama", "Richard Michael Mkechera"],
+    Electronics_and_Telecommunications_Engineering: ["Abdi Talib Abdalla", "Alfred John Mwambela", "Angelina Zachary Misso", "Arnold Exaudy Matemu", "Baraka Jacob Maiseli", "Christine Mwase", "Collether Nyalusi John", "Eva Ibrahim Shayo", "Florian Mkemwa", "Godfrey William Chugulu", "Godwin Mruma Gadiel", "Hadija Ramadhani Mbembati", "Hashimu Uledi Iddi", "Hubert Gideon Msuya", "Iddy Ridhaa Swalehe", "Isack Emmanuel Bulugu", "James Silayo Michael", "Josephati Mng'ong'o", "Josephine Kalekwa Stephen", "Josiah Patrick Nombo", "Khadija Mkocha", "Kwame Sakum Ibwe", "Libe Valentine Massawe", "Marshed Kassim Mohamed", "Moses Ismail Mchome", "Mussa Muhidini Kissaka", "Nassor Ally Nassor", "Nelson Tito Kimaro", "Rahabu Frank Mwang'amba", "Salim Mohamed Yahya", "Samwel Eliya Kimambo", "Shamte Juma Kawambwa", "Shililiandumi Naiman", "Thobius Joseph", "Fikiri Salum Uledi"],
     Public_Law:["Abdon Edward Rwegasira", "Hamisi Jangawe Msuya", "Hussein Kitta Mlinga", "Idd Ramadhani Mandi", "Jaba Tumaini Shadrack", "Jacktone Odhiambo Koyugi", "Laurean Laurent Mussa", "Mathew Yonika Ngaga", "Saki Aggrey Mlimuka", "Taragwa Michael Nyang'anyi", "Velena Anipenda Clemence"],
     Economic_Law:["Makarious Justin Tairo", "Daniel Aloyce Shayo", "Dina Tukiko Omosso", "Dominic Daniel Rweyemamu", "Ebenezer Stafford Mshana", "Erasmo Salvatory Nyika", "Esther Charles Mlingwa", "Florencia Evarest Kimario", "Hamza Ismail Abdulrahman", "Lilian Magabiro Masalu", "Prfect Melkiori Marandu", "Saudin Jacob Mwakaje", "Sehewa Stephen Njamasi", "Semu Thomas Mtenga", "Sosteness Francis Materu", "Tumaini Heriel Hayuma", "Ulimboka Lugano Mwasomola"],
     Private_Law:["Abdallah Gonzi Halfan", "Abel Juma Mwiburi", "Antidius Dismas Kaitu", "Baraka Francisco Kanyabuhinya", "Benedict Thomas Mapunda", "Boaz John Mabula", "Bonaventure Sylvand Rutinwa", "Cecilia Edward Nhaiza", "Chacha Mairo Wansaku", "Francis Tumaini Sabby", "Goodluck Thomas Kiwory", "Goodluck Godfrey Temu", "Hamudi Ismail Majamba", "Hilda Charles Tizeba", "Jema Clemence Rwihura", "Jemaaa Clemencee Rwihura", "Nicksoni Filbert Kahimba", "Nicolous Praygod Amani", "Nuru Komba Benjamin", "Petro Protas Upina", "Samwel Gerald Mbawala", "Theophil Mujubi Romward", "Veronica Gabriel Buchumi"],
@@ -439,7 +423,7 @@
     SJMC:["Abdallah Batenga Katunzi", "Abihudi Semotine Sembosi", "Alex Benson Sichona", "Damas Paul Kamala", "Darius Diocles Mukiza", "Dotto Paul Casmir Kuhenga", "Edgar Leonard Ngelela", "Egbert Emmanuel Mkoko", "Elisha Merick Magolanga", "Emmanuel Andwele Ngabo", "Godlisten Godfrey Malisa", "Issa Athumani Mbura", "Jenitha Kanyanyinyi Rugaika", "Kamfipo Gidion Mwakitalu", "Lila Sayi Mandu", "Malika Joseph Nginilla", "Malima Pamba Zacharia", "Njonjo Omari Mfaume", "Shekha Ally Hussein", "Sophia Kokugonza Ndibalema", "Swaum Mustapher Manengelo", "Theodora Theodory Uisso", "Theodorah Stanley Munisi", "Vaileth Barden Mwamfupe", "Zuhura Selemani Khateeb", "Eva Solomon Msangi", "Dianus Josephat"],
     Physical_Education_and_Sport_Sciences:["Avelina Baltazary Shao", "John David Kazungu", "Alfa Yohana Simwanza", "Cyprian Ngilisho Maro", "Devota John Marwa", "Ismail Nathaniel Pangani", "Janeth Danford Mlay", "John Siayi Irafay", "John David Kazungu", "Jonas Bennedict Tiboroha", "Joyce Sifa Ndabi", "Msabila Damian Charles", "Philemon John Matteru", "Stephen Norbert Mabagala", ""],
     Educational_Psychology_and_Curriculm_Studies:["Aurelia Raphael Kimaro", "Baraka Silvester Mbata", "Batromayo Kayombo Gervas", "Chris Mungubariki Mauki", "Eunice Ayubu Kitenge", "Gabriel Pius Hoza", "Ibrahim Siwala Nzima", "Innocenta Charles Chanjala",  "Joyce Idd Mkongo", "Agnes Joachim Lyimo", "Albert Paulo Tarmo", "Bernadetha Gabriel Rushahu", "Daniel Fedrick Marandu", "Elizabeth Kilines Sekwiha Gwajima", "Emmanuael Daudi Mollel", "Eugenia Joseph Kaganabo", "Eunice Ayubu Kitenge", "Evance Joseph Mapunda", "Gabriel Pius Hoza", "Gaudensia Lamosai Emanuel", "Happiness Selemani Mwinyikondo", "Hilary Abdulrahaman Dachi", "Ibrahimu Siwala Nzima", "Innocent Charles Chanjala", "Jacqueline Alexander Nkwamah", "Jafari Abdala Omari", "Joviter Kamugisha Katabaro", "Lameck Emilyo Nzali", "Lwimiko Salum Sanga", "Mary Ghamunga Saragu", "Morwo Likinjiye Mollel", "Mudhihir Hassan Mudhihir", "Mwajuma Siama Vuzo", "Nanai Emmanuel Nanai", "Noela Ephraim Ndunguru", "Ramadhani Kachwamba Mzamiru", "Rebbeca Gawile Sima", "Richard Yesaya Shukia", "Sarah Ezekiel Kisanga", "Septimi Reuben Kitta", "Stanslaus James Maroho", "Suitbert Emil Lyakurwa",  "Wadrine Onael Maro" ],
-    Educational_Foundations_Mnagement_and_Lifelong_Learning:["Albert Maziku Chagula", "Daudi Norbet Massima", "Diana Damas Masebo", "Eustella Peter Bhalaluesa", "Fortunatha Mathias Matiba", "Johnson Muchunguzi Ishengoma", "Juliana Laurian Bachilula", "Justo Mathew Lemesaya", "Afrael Mark Sarakikya", "Ahadi Mzumbwe Anana",  "Amina Nasibu Komando", "Benjamin Tumaleghe Mbughi", "Blackson Kiama Kanukisya", "Elisante Kamugisha Mutoka", "Eustella Peter Bhalalusesa", "Fortunatha Mathias Matiba", "Gennes Hendry Shirima", "George Leonard Kahangwa", "Harun Jackson Magosho", "Joseph Christopher Pesambili", "Lulu Simon Mahai", "Mackdonald Francis Mwagu", "Maximillian Gasper Mgeni", "Moshi Amsi Mislay", "Mpoki John Mwaikokesya", "Nkanileka Loti Mgonda", "Ntimi Nikusuma Mtawa", "Patrick Renatus Manyengo",  "Philipo Lonati Sanga", "Raymond Mwemezi Boniface", "Romwald Kimego Hyera", "Simon Peter Ngalomba", "Thaudensia Thomas Ndeskoi", "William-Andey Lazaro Anangasye", "Yohana Stephano William"],
+    Educational_Foundations_Management_and_Lifelong_Learning:["Albert Maziku Chagula", "Daudi Norbet Massima", "Diana Damas Masebo", "Eustella Peter Bhalaluesa", "Fortunatha Mathias Matiba", "Johnson Muchunguzi Ishengoma", "Juliana Laurian Bachilula", "Justo Mathew Lemesaya", "Afrael Mark Sarakikya", "Ahadi Mzumbwe Anana",  "Amina Nasibu Komando", "Benjamin Tumaleghe Mbughi", "Blackson Kiama Kanukisya", "Elisante Kamugisha Mutoka", "Eustella Peter Bhalalusesa", "Fortunatha Mathias Matiba", "Gennes Hendry Shirima", "George Leonard Kahangwa", "Harun Jackson Magosho", "Joseph Christopher Pesambili", "Lulu Simon Mahai", "Mackdonald Francis Mwagu", "Maximillian Gasper Mgeni", "Moshi Amsi Mislay", "Mpoki John Mwaikokesya", "Nkanileka Loti Mgonda", "Ntimi Nikusuma Mtawa", "Patrick Renatus Manyengo",  "Philipo Lonati Sanga", "Raymond Mwemezi Boniface", "Romwald Kimego Hyera", "Simon Peter Ngalomba", "Thaudensia Thomas Ndeskoi", "William-Andey Lazaro Anangasye", "Yohana Stephano William"],
     Aquatic_Sciences_and_Fisheries_Technology:["Asha Mansour Hamdun", "Bahati Sosthenes Mayoma", "Blandina Robert Lugendo", "Changoma Marko Frabcis", "Daniel Abel Shilla", "Fadhili Mustafa Malesa", "James Leonard Lusana", "Joseph Steven Matata", "Julius Francis Woiso", "Lulu Tuna Kaaya", "Lydia Gaspare Kanyairita", "Nyamisi Peter Mombia", "Prosper Laurent Mfilinge", "Samwel Jonathan Nassary", "Pius Saphery Mwamwaja", "Siajali Pamba Zegge", "Twalibu Kithakeni Mmbaga", "Roman John Mkenda", "Alex Amos Alex"],
     Aquaculture_Technology:["Betina Michael Lukwambe", "Chacha John Mwita", "Jerry Geofrey Mang'ena", "Redempta Athanas Kajungiro", "Samson Job Philemon", "Samwel Mchele Limbu"],
     Dental:["Emeria Abella Mugonzibwa"],
@@ -564,7 +548,7 @@ document.getElementById('staff').addEventListener('change', function () {
         // Set the staff name and apply styles to position it under the image
         displayArea.textContent = `Name: ${selectedStaff}`;
         displayArea.style.fontSize = "18px";
-        displayArea.style.color = "orange";
+        displayArea.style.color = "black";
         displayArea.style.position = "absolute"; 
         displayArea.style.transform = "translateX(330px) translateY(200px)";
         displayArea.style.textAlign = "center";
@@ -706,26 +690,72 @@ fetch(apiUrl)
 
     // Calculate total number of journals (skip if "NaN")
     const totalJournal = data.reduce((sum, publication) => {
-      return sum + (publication.journal && publication.journal !== 'NaN' ? 1 : 0);
+      return sum + (publication.journal && publication.journal !== '0' ? 1 : 0);
     }, 0);
 
     // Calculate total number of booktitles (skip if "NaN")
     const totalBookTitle = data.reduce((sum, publication) => {
-      return sum + (publication.booktitle && publication.booktitle !== 'NaN' ? 1 : 0);
+      return sum + (publication.booktitle && publication.booktitle !== '0' ? 1 : 0);
     }, 0);
 
     // Count "NaN" in both journal and booktitle in the same row
-    const totalNaNInBoth = data.reduce((sum, publication) => {
-      return sum + (publication.journal === 'NaN' && publication.booktitle === 'NaN' ? 1 : 0);
+    const total0InBoth = data.reduce((sum, publication) => {
+      return sum + (publication.journal === '0' && publication.booktitle === '0' ? 1 : 0);
     }, 0);
 
     // Log the results
     console.log('Total unique staff:', totalUniqueStaff);
     console.log('Total journals:', totalJournal);
-    console.log('Total booktitles:', totalBookTitle);
-    console.log('Total Unknown in both journal and booktitle:', totalNaNInBoth);
+    console.log('Total conferences:', totalBookTitle);
+    console.log('Total books:', total0InBoth);
   })
   .catch(error => console.error('Error fetching data:', error));
+
+   
+// Fetch data from the API
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Initialize an object to hold counts for each staff
+    const staffCounts = {};
+
+    data.forEach(publication => {
+      const staffName = publication.full_name;
+
+      // Initialize the staff entry if it does not exist
+      if (!staffCounts[staffName]) {
+        staffCounts[staffName] = {
+          totalJournals: 0,
+          totalBookTitles: 0,
+          total0: 0
+        };
+      }
+
+      // Update counts for the staff
+      if (publication.journal && publication.journal !== '0') {
+        staffCounts[staffName].totalJournals += 1;
+      }
+
+      if (publication.booktitle && publication.booktitle !== '0') {
+        staffCounts[staffName].totalBookTitles += 1;
+      }
+
+      if (publication.journal === '0' && publication.booktitle === '0') {
+        staffCounts[staffName].total0 += 1;
+      }
+    });
+
+    // Log the results for each staff
+    for (const staffName in staffCounts) {
+      const counts = staffCounts[staffName];
+      console.log(`Staff: ${staffName}`);
+      console.log(`  Total Journals: ${counts.totalJournals}`);
+      console.log(`  Total Conferences: ${counts.totalBookTitles}`);
+      console.log(`  Total Books: ${counts.total0}`);
+    }
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
 
 // Function to calculate total publications for each staff member
 function calculateTotalPublications(staffMember) {
@@ -755,32 +785,12 @@ function rankStaffByPublications(staffList) {
     });
 }
 
-// Function to fetch data from the API and rank the staff
-function fetchAndRankStaff() {
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            // Assuming the API returns a list of staff members with their publications
-            rankStaffByPublications(data.staff);
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-        });
-}
-
-// Call the function to fetch data and rank the staff
-fetchAndRankStaff();
-
-
-// Example API endpoint
-
-
 // Department data with staff members
 const departmentData = {
-  "ETE":{
+  "Electronics_and_Telecommunications_Engineering":{
   staff: ["Abdi Talib Abdalla", "Alfred John Mwambela", "Angelina Zachary Misso", "Arnold Exaudy Matemu", "Baraka Jacob Maiseli", "Christine Mwase", "Collether Nyalusi John", "Eva Ibrahim Shayo", "Florian Mkemwa", "Godfrey William Chugulu", "Godwin Mruma Gadiel", "Hadija Ramadhani Mbembati", "Hashimu Uledi Iddi", "Hubert Gideon Msuya", "Iddy Ridhaa Swalehe", "Isack Emmanuel Bulugu", "James Silayo Michael", "Josephati Mng'ong'o", "Josephine Kalekwa Stephen", "Josiah Patrick Nombo", "Khadija Mkocha", "Kwame Sakum Ibwe", "Libe Valentine Massawe", "Marshed Kassim Mohamed", "Moses Ismail Mchome", "Mussa Muhidini Kissaka", "Nassor Ally Nassor", "Nelson Tito Kimaro", "Rahabu Frank Mwang'amba", "Salim Mohamed Yahya", "Samwel Eliya Kimambo", "Shamte Juma Kawambwa", "Shililiandumi Naiman", "Thobius Joseph", "Fikiri Salum Uledi"],
   },
-  "CSE":{
+  "Computer_Science_and_Engineering":{
    staff: ["Abdulla Faki Ally", "Alexander Rogath Kivaisi", "Ally Tahir Bitebo", "Anthony Joseph Kigombola", "Aron Wajanga Kandoro", "Bernard Noel Mussa", "Betty Mkatasa Mbwilo", "Brighton Heriel Lema", "Daudi Charles Mnyanghwalo", "Diana Severine Rwegasira", "Ellen Ambakisye Kalinga", "Fatuma Ikuja Simba", "Fortunatus Kawasa", "Godfrey Njulumi Justo", "Hassan Omary Muhomi", "Hellen Henry Maziku", "Henrick Leonard Mwasita", "Henry Kalisti Lamshai", "Herrieth John Machiwa", "Honest Christopher Kimaro", "Hussein Sudi Lema", "Jacqueline Damas", "James Samwel Chambua", "Jimmy Tibangayuka Mbelwa", "Joel Samson Mtebe", "Joseph Cosmas Mushi", "Juma Hemed Lungo", "Kennedy Frank Mwakisole", "Leonard Peter Binamungu", "Lilian Emmanuel Mkonyi", "Mahadia Ally Tunga", "Marco Masembo", "Masoud Hussein Mahundi", "Mathew John Mndeme", "Mercy Ellyns Mbise", "Merina Luambano Marcelino", "Mwita Michael Sogorya", "Ruthbetha Beatus Kateule", "Salome  Maro", "Twahir Abasi Kiobya", "Wilbard Bilungi Nyamwihula", "Wilfred Felix Senyoni", "Yona Andegelile", "Zaituni Anthony Kaijage", "Simon Mang'ombe Machera", "Shaban Ramadhan Hando", "Henry Salvatory Mkama", "Richard Michael Mkechera"],
    },
    "DUCE":{
@@ -804,10 +814,10 @@ const departmentData = {
   "Faculty_of_Education":{
   staff:["Daniel Sidney Fussy", "Jaquiline Amani Moshi", "Selina Thomas Mkimbili", "Hassan Iddy Hassan", "Joseph Reginard Milinga", "Orestes Silverius Kapinga", "Oscar Joel Magava", "Adella Raymond Mtey", "Christina Nelson Mbilinyi", "Hawa Mohamed Mpate", "John Fungulupembe Kalolo", "Mariana Manyus Mhewa", "Ndomondo Shaban Eunice", "Vicent Jalang'o Cosmas",  "Andrea Alfred Lazaro", "Anna Benson Boreka", "Aristedes Zas Mdemu", "Ayubu Ismail Ngao", "Baraka Gaitan Luvanga", "Beni Twiseghe Mbwile", "Daudi Heriel Mrema", "Doris Largus Mosha", "Elizabeth Elias Makishe", "Ezelina Angetile Kibonde", "Fedy Speditho Magidanga", "Fourunatha Lawrence Mtesigwa", "Getrude Marko Mkinga", "Honorata Joseph Kihaga", "Jubilate Rogathe Shuma", "Kennedy Dastan Kaduma", "Loti Isaya Kambey", "Manaseh Mkanga Aaron", "Monica Asagwile Mwakifuma", "Mussa Stephano Amos", "Nabwera Hassan Rashid", "Philbert Epafras Msaki","Upendo Jeremiah Mdugo", "Venance Mallya Paulo", "Wakati Mgelavanu Maliva", "Willy Joseph Kasuga", "Zedekian Nyagawa Malyatangas", "Aziel Emmanuel Kibuka", "Christopher Lagwen Ongo", "Emmanuel Benito Mng'ong'o", ""],
   },
-  "CSE":{
+  "Computer_Science_and_Engineering":{
   staff:["Abdulla Faki Ally", "Alexander Rogath Kivaisi", "Ally Tahir Bitebo", "Anthony Joseph Kigombola", "Aron Wajanga Kandoro", "Bernard Noel Mussa", "Betty Mkatasa Mbwilo", "Brighton Heriel Lema", "Daudi Charles Mnyanghwalo", "Diana Severine Rwegasira", "Ellen Ambakisye Kalinga", "Fatuma Ikuja Simba", "Fortunatus Kawasa", "Godfrey Njulumi Justo", "Hassan Omary Muhomi", "Hellen Henry Maziku", "Henrick Leonard Mwasita", "Henry Kalisti Lamshai", "Herrieth John Machiwa", "Honest Christopher Kimaro", "Hussein Sudi Lema", "Jacqueline Damas", "James Samwel Chambua", "Jimmy Tibangayuka Mbelwa", "Joel Samson Mtebe", "Joseph Cosmas Mushi", "Juma Hemed Lungo", "Kennedy Frank Mwakisole", "Leonard Peter Binamungu", "Lilian Emmanuel Mkonyi", "Mahadia Ally Tunga", "Marco Masembo", "Masoud Hussein Mahundi", "Mathew John Mndeme", "Mercy Ellyns Mbise", "Merina Luambano Marcelino", "Mwita Michael Sogorya", "Ruthbetha Beatus Kateule", "Salome  Maro", "Twahir Abasi Kiobya", "Wilbard Bilungi Nyamwihula", "Wilfred Felix Senyoni", "Yona Andegelile", "Zaituni Anthony Kaijage", "Simon Mang'ombe Machera", "Shaban Ramadhan Hando", "Henry Salvatory Mkama", "Richard Michael Mkechera"],
   },
-  "ETE":{
+  "Electronics_and_Telecommunications_Engineering":{
   staff:["Abdi Talib Abdalla", "Alfred John Mwambela", "Angelina Zachary Misso", "Arnold Exaudy Matemu", "Baraka Jacob Maiseli", "Christine Mwase", "Collether Nyalusi John", "Eva Ibrahim Shayo", "Florian Mkemwa", "Godfrey William Chugulu", "Godwin Mruma Gadiel", "Hadija Ramadhani Mbembati", "Hashimu Uledi Iddi", "Hubert Gideon Msuya", "Iddy Ridhaa Swalehe", "Isack Emmanuel Bulugu", "James Silayo Michael", "Josephati Mng'ong'o", "Josephine Kalekwa Stephen", "Josiah Patrick Nombo", "Khadija Mkocha", "Kwame Sakum Ibwe", "Libe Valentine Massawe", "Marshed Kassim Mohamed", "Moses Ismail Mchome", "Mussa Muhidini Kissaka", "Nassor Ally Nassor", "Nelson Tito Kimaro", "Rahabu Frank Mwang'amba", "Salim Mohamed Yahya", "Samwel Eliya Kimambo", "Shamte Juma Kawambwa", "Shililiandumi Naiman", "Thobius Joseph", "Fikiri Salum Uledi"],
     },
   "Public_Law":{
@@ -849,7 +859,7 @@ const departmentData = {
   "Educational_Psychology_and_Curriculm_Studies":{
   staff:["Aurelia Raphael Kimaro", "Baraka Silvester Mbata", "Batromayo Kayombo Gervas", "Chris Mungubariki Mauki", "Eunice Ayubu Kitenge", "Gabriel Pius Hoza", "Ibrahim Siwala Nzima", "Innocenta Charles Chanjala",  "Joyce Idd Mkongo", "Agnes Joachim Lyimo", "Albert Paulo Tarmo", "Bernadetha Gabriel Rushahu", "Daniel Fedrick Marandu", "Elizabeth Kilines Sekwiha Gwajima", "Emmanuael Daudi Mollel", "Eugenia Joseph Kaganabo", "Eunice Ayubu Kitenge", "Evance Joseph Mapunda", "Gabriel Pius Hoza", "Gaudensia Lamosai Emanuel", "Happiness Selemani Mwinyikondo", "Hilary Abdulrahaman Dachi", "Ibrahimu Siwala Nzima", "Innocent Charles Chanjala", "Jacqueline Alexander Nkwamah", "Jafari Abdala Omari", "Joviter Kamugisha Katabaro", "Lameck Emilyo Nzali", "Lwimiko Salum Sanga", "Mary Ghamunga Saragu", "Morwo Likinjiye Mollel", "Mudhihir Hassan Mudhihir", "Mwajuma Siama Vuzo", "Nanai Emmanuel Nanai", "Noela Ephraim Ndunguru", "Ramadhani Kachwamba Mzamiru", "Rebbeca Gawile Sima", "Richard Yesaya Shukia", "Sarah Ezekiel Kisanga", "Septimi Reuben Kitta", "Stanslaus James Maroho", "Suitbert Emil Lyakurwa",  "Wadrine Onael Maro" ],
   },
-  "Educational_Foundations_Mnagement_and_Lifelong_Learning":{
+  "Educational_Foundations,_Management_and_Lifelong_Learning":{
   staff:["Albert Maziku Chagula", "Daudi Norbet Massima", "Diana Damas Masebo", "Eustella Peter Bhalaluesa", "Fortunatha Mathias Matiba", "Johnson Muchunguzi Ishengoma", "Juliana Laurian Bachilula", "Justo Mathew Lemesaya", "Afrael Mark Sarakikya", "Ahadi Mzumbwe Anana",  "Amina Nasibu Komando", "Benjamin Tumaleghe Mbughi", "Blackson Kiama Kanukisya", "Elisante Kamugisha Mutoka", "Eustella Peter Bhalalusesa", "Fortunatha Mathias Matiba", "Gennes Hendry Shirima", "George Leonard Kahangwa", "Harun Jackson Magosho", "Joseph Christopher Pesambili", "Lulu Simon Mahai", "Mackdonald Francis Mwagu", "Maximillian Gasper Mgeni", "Moshi Amsi Mislay", "Mpoki John Mwaikokesya", "Nkanileka Loti Mgonda", "Ntimi Nikusuma Mtawa", "Patrick Renatus Manyengo",  "Philipo Lonati Sanga", "Raymond Mwemezi Boniface", "Romwald Kimego Hyera", "Simon Peter Ngalomba", "Thaudensia Thomas Ndeskoi", "William-Andey Lazaro Anangasye", "Yohana Stephano William"],
   },
   "Aquatic_Sciences_and_Fisheries_Technology":{
@@ -1041,7 +1051,7 @@ fetch(apiUrl)
 
       let deptTotalJournals = 0;
       let deptTotalBookTitles = 0;
-      let deptTotalNaN = 0;
+      let deptTotal0 = 0;
       let deptTotalPublications = 0;
 
       const departmentBody = document.getElementById('departmentBody');
@@ -1068,30 +1078,30 @@ fetch(apiUrl)
             staffCounts[staffName] = {
               totalJournals: 0,
               totalBookTitles: 0,
-              totalNaN: 0,
+              total0: 0,
               totalPublications: 0
             };
           }
 
-          if (publication.journal && publication.journal !== 'NaN') {
+          if (publication.journal && publication.journal !== '0') {
             staffCounts[staffName].totalJournals += 1;
             deptTotalJournals += 1;
           }
 
-          if (publication.booktitle && publication.booktitle !== 'NaN') {
+          if (publication.booktitle && publication.booktitle !== '0') {
             staffCounts[staffName].totalBookTitles += 1;
             deptTotalBookTitles += 1;
           }
 
-          if (publication.journal === 'NaN' && publication.booktitle === 'NaN') {
-            staffCounts[staffName].totalNaN += 1;
-            deptTotalNaN += 1;
+          if (publication.journal === '0' && publication.booktitle === '0') {
+            staffCounts[staffName].total0 += 1;
+            deptTotal0 += 1;
           }
 
           staffCounts[staffName].totalPublications =
             staffCounts[staffName].totalJournals +
             staffCounts[staffName].totalBookTitles +
-            staffCounts[staffName].totalNaN;
+            staffCounts[staffName].total0;
 
           deptTotalPublications += 1;
         }
@@ -1105,7 +1115,7 @@ fetch(apiUrl)
           <td>${staffName}</td>
           <td>${counts.totalJournals}</td>
           <td>${counts.totalBookTitles}</td>
-          <td>${counts.totalNaN}</td>
+          <td>${counts.total0}</td>
           <td>${counts.totalPublications}</td>
         `;
         departmentBody.appendChild(row);
@@ -1114,7 +1124,7 @@ fetch(apiUrl)
       // Update the overall totals for the department
       document.getElementById('deptTotalJournals').textContent = deptTotalJournals;
       document.getElementById('deptTotalBookTitles').textContent = deptTotalBookTitles;
-      document.getElementById('deptTotalNaN').textContent = deptTotalNaN;
+      document.getElementById('deptTotal0').textContent = deptTotal0;
       document.getElementById('deptTotalPublications').textContent = deptTotalPublications;
     }
 
@@ -1144,8 +1154,8 @@ fetch(apiUrl)
 
   const collegeData = {
   CoICT: {
-    CSE: ["Abdulla Faki Ally", "Alexander Rogath Kivaisi", "Ally Tahir Bitebo", "Anthony Joseph Kigombola", "Aron Wajanga Kandoro", "Bernard Noel Mussa", "Betty Mkatasa Mbwilo", "Brighton Heriel Lema", "Daudi Charles Mnyanghwalo", "Diana Severine Rwegasira", "Ellen Ambakisye Kalinga", "Fatuma Ikuja Simba", "Fortunatus Kawasa", "Godfrey Njulumi Justo", "Hassan Omary Muhomi", "Hellen Henry Maziku", "Henrick Leonard Mwasita", "Henry Kalisti Lamshai", "Herrieth John Machiwa", "Honest Christopher Kimaro", "Hussein Sudi Lema", "Jacqueline Damas", "James Samwel Chambua", "Jimmy Tibangayuka Mbelwa", "Joel Samson Mtebe", "Joseph Cosmas Mushi", "Juma Hemed Lungo", "Kennedy Frank Mwakisole", "Leonard Peter Binamungu", "Lilian Emmanuel Mkonyi", "Mahadia Ally Tunga", "Marco Masembo", "Masoud Hussein Mahundi", "Mathew John Mndeme", "Mercy Ellyns Mbise", "Merina Luambano Marcelino", "Mwita Michael Sogorya", "Ruthbetha Beatus Kateule", "Salome  Maro", "Twahir Abasi Kiobya", "Wilbard Bilungi Nyamwihula", "Wilfred Felix Senyoni", "Yona Andegelile", "Zaituni Anthony Kaijage", "Simon Mang'ombe Machera", "Shaban Ramadhan Hando", "Henry Salvatory Mkama", "Richard Michael Mkechera"],
-    ETE: ["Abdi Talib Abdalla", "Alfred John Mwambela", "Angelina Zachary Misso", "Arnold Exaudy Matemu", "Baraka Jacob Maiseli", "Christine Mwase", "Collether Nyalusi John", "Eva Ibrahim Shayo", "Florian Mkemwa", "Godfrey William Chugulu", "Godwin Mruma Gadiel", "Hadija Ramadhani Mbembati", "Hashimu Uledi Iddi", "Hubert Gideon Msuya", "Iddy Ridhaa Swalehe", "Isack Emmanuel Bulugu", "James Silayo Michael", "Josephati Mng'ong'o", "Josephine Kalekwa Stephen", "Josiah Patrick Nombo", "Khadija Mkocha", "Kwame Sakum Ibwe", "Libe Valentine Massawe", "Marshed Kassim Mohamed", "Moses Ismail Mchome", "Mussa Muhidini Kissaka", "Nassor Ally Nassor", "Nelson Tito Kimaro", "Rahabu Frank Mwang'amba", "Salim Mohamed Yahya", "Samwel Eliya Kimambo", "Shamte Juma Kawambwa", "Shililiandumi Naiman", "Thobius Joseph", "Fikiri Salum Uledi"],
+    Computer_Science_and_Engineering: ["Abdulla Faki Ally", "Alexander Rogath Kivaisi", "Ally Tahir Bitebo", "Anthony Joseph Kigombola", "Aron Wajanga Kandoro", "Bernard Noel Mussa", "Betty Mkatasa Mbwilo", "Brighton Heriel Lema", "Daudi Charles Mnyanghwalo", "Diana Severine Rwegasira", "Ellen Ambakisye Kalinga", "Fatuma Ikuja Simba", "Fortunatus Kawasa", "Godfrey Njulumi Justo", "Hassan Omary Muhomi", "Hellen Henry Maziku", "Henrick Leonard Mwasita", "Henry Kalisti Lamshai", "Herrieth John Machiwa", "Honest Christopher Kimaro", "Hussein Sudi Lema", "Jacqueline Damas", "James Samwel Chambua", "Jimmy Tibangayuka Mbelwa", "Joel Samson Mtebe", "Joseph Cosmas Mushi", "Juma Hemed Lungo", "Kennedy Frank Mwakisole", "Leonard Peter Binamungu", "Lilian Emmanuel Mkonyi", "Mahadia Ally Tunga", "Marco Masembo", "Masoud Hussein Mahundi", "Mathew John Mndeme", "Mercy Ellyns Mbise", "Merina Luambano Marcelino", "Mwita Michael Sogorya", "Ruthbetha Beatus Kateule", "Salome  Maro", "Twahir Abasi Kiobya", "Wilbard Bilungi Nyamwihula", "Wilfred Felix Senyoni", "Yona Andegelile", "Zaituni Anthony Kaijage", "Simon Mang'ombe Machera", "Shaban Ramadhan Hando", "Henry Salvatory Mkama", "Richard Michael Mkechera"],
+    Electronics_and_Telecommunications_Engineering: ["Abdi Talib Abdalla", "Alfred John Mwambela", "Angelina Zachary Misso", "Arnold Exaudy Matemu", "Baraka Jacob Maiseli", "Christine Mwase", "Collether Nyalusi John", "Eva Ibrahim Shayo", "Florian Mkemwa", "Godfrey William Chugulu", "Godwin Mruma Gadiel", "Hadija Ramadhani Mbembati", "Hashimu Uledi Iddi", "Hubert Gideon Msuya", "Iddy Ridhaa Swalehe", "Isack Emmanuel Bulugu", "James Silayo Michael", "Josephati Mng'ong'o", "Josephine Kalekwa Stephen", "Josiah Patrick Nombo", "Khadija Mkocha", "Kwame Sakum Ibwe", "Libe Valentine Massawe", "Marshed Kassim Mohamed", "Moses Ismail Mchome", "Mussa Muhidini Kissaka", "Nassor Ally Nassor", "Nelson Tito Kimaro", "Rahabu Frank Mwang'amba", "Salim Mohamed Yahya", "Samwel Eliya Kimambo", "Shamte Juma Kawambwa", "Shililiandumi Naiman", "Thobius Joseph", "Fikiri Salum Uledi"],
     // Add other departments and their respective staff names
   },
   DUCE: {
@@ -1190,7 +1200,7 @@ fetch(apiUrl)
   SoED: {
     Physical_Education_and_Sport_Sciences:["Avelina Baltazary Shao", "John David Kazungu", "Alfa Yohana Simwanza", "Cyprian Ngilisho Maro", "Devota John Marwa", "Ismail Nathaniel Pangani", "Janeth Danford Mlay", "John Siayi Irafay", "John David Kazungu", "Jonas Bennedict Tiboroha", "Joyce Sifa Ndabi", "Msabila Damian Charles", "Philemon John Matteru", "Stephen Norbert Mabagala", ""],
     Educational_Psychology_and_Curriculm_Studies:["Aurelia Raphael Kimaro", "Baraka Silvester Mbata", "Batromayo Kayombo Gervas", "Chris Mungubariki Mauki", "Eunice Ayubu Kitenge", "Gabriel Pius Hoza", "Ibrahim Siwala Nzima", "Innocenta Charles Chanjala",  "Joyce Idd Mkongo", "Agnes Joachim Lyimo", "Albert Paulo Tarmo", "Bernadetha Gabriel Rushahu", "Daniel Fedrick Marandu", "Elizabeth Kilines Sekwiha Gwajima", "Emmanuael Daudi Mollel", "Eugenia Joseph Kaganabo", "Eunice Ayubu Kitenge", "Evance Joseph Mapunda", "Gabriel Pius Hoza", "Gaudensia Lamosai Emanuel", "Happiness Selemani Mwinyikondo", "Hilary Abdulrahaman Dachi", "Ibrahimu Siwala Nzima", "Innocent Charles Chanjala", "Jacqueline Alexander Nkwamah", "Jafari Abdala Omari", "Joviter Kamugisha Katabaro", "Lameck Emilyo Nzali", "Lwimiko Salum Sanga", "Mary Ghamunga Saragu", "Morwo Likinjiye Mollel", "Mudhihir Hassan Mudhihir", "Mwajuma Siama Vuzo", "Nanai Emmanuel Nanai", "Noela Ephraim Ndunguru", "Ramadhani Kachwamba Mzamiru", "Rebbeca Gawile Sima", "Richard Yesaya Shukia", "Sarah Ezekiel Kisanga", "Septimi Reuben Kitta", "Stanslaus James Maroho", "Suitbert Emil Lyakurwa",  "Wadrine Onael Maro" ],
-    Educational_Foundations_Mnagement_and_Lifelong_Learning:["Albert Maziku Chagula", "Daudi Norbet Massima", "Diana Damas Masebo", "Eustella Peter Bhalaluesa", "Fortunatha Mathias Matiba", "Johnson Muchunguzi Ishengoma", "Juliana Laurian Bachilula", "Justo Mathew Lemesaya", "Afrael Mark Sarakikya", "Ahadi Mzumbwe Anana",  "Amina Nasibu Komando", "Benjamin Tumaleghe Mbughi", "Blackson Kiama Kanukisya", "Elisante Kamugisha Mutoka", "Eustella Peter Bhalalusesa", "Fortunatha Mathias Matiba", "Gennes Hendry Shirima", "George Leonard Kahangwa", "Harun Jackson Magosho", "Joseph Christopher Pesambili", "Lulu Simon Mahai", "Mackdonald Francis Mwagu", "Maximillian Gasper Mgeni", "Moshi Amsi Mislay", "Mpoki John Mwaikokesya", "Nkanileka Loti Mgonda", "Ntimi Nikusuma Mtawa", "Patrick Renatus Manyengo",  "Philipo Lonati Sanga", "Raymond Mwemezi Boniface", "Romwald Kimego Hyera", "Simon Peter Ngalomba", "Thaudensia Thomas Ndeskoi", "William-Andey Lazaro Anangasye", "Yohana Stephano William"],
+    Educational_Foundations_Management_and_Lifelong_Learning:["Albert Maziku Chagula", "Daudi Norbet Massima", "Diana Damas Masebo", "Eustella Peter Bhalaluesa", "Fortunatha Mathias Matiba", "Johnson Muchunguzi Ishengoma", "Juliana Laurian Bachilula", "Justo Mathew Lemesaya", "Afrael Mark Sarakikya", "Ahadi Mzumbwe Anana",  "Amina Nasibu Komando", "Benjamin Tumaleghe Mbughi", "Blackson Kiama Kanukisya", "Elisante Kamugisha Mutoka", "Eustella Peter Bhalalusesa", "Fortunatha Mathias Matiba", "Gennes Hendry Shirima", "George Leonard Kahangwa", "Harun Jackson Magosho", "Joseph Christopher Pesambili", "Lulu Simon Mahai", "Mackdonald Francis Mwagu", "Maximillian Gasper Mgeni", "Moshi Amsi Mislay", "Mpoki John Mwaikokesya", "Nkanileka Loti Mgonda", "Ntimi Nikusuma Mtawa", "Patrick Renatus Manyengo",  "Philipo Lonati Sanga", "Raymond Mwemezi Boniface", "Romwald Kimego Hyera", "Simon Peter Ngalomba", "Thaudensia Thomas Ndeskoi", "William-Andey Lazaro Anangasye", "Yohana Stephano William"],
  
   },
   SoAF: {
@@ -1294,95 +1304,125 @@ fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
     
-    // Function to display college data based on selected college and year
     function displayCollegeData(collegeName, selectedYear = "all") {
-      const departments = collegeData[collegeName];
-      if (!departments) {
-        console.error(`College "${collegeName}" not found in collegeData.`);
-        return;
+  const departments = collegeData[collegeName];
+  if (!departments) {
+    console.error(`College "${collegeName}" not found in collegeData.`);
+    return;
+  }
+
+  let totalJournals = 0;
+  let totalBookTitles = 0;
+  let total0 = 0;
+  let totalPublications = 0;
+  let totalDepartments = 0;
+  let totalStaffs = 0;
+
+  const collegeBody = document.getElementById('collegeBody');
+  collegeBody.innerHTML = ''; // Clear any existing rows
+
+  // Count total departments
+  totalDepartments = Object.keys(departments).length;
+
+  Object.keys(departments).forEach(department => {
+    const staffNames = departments[department];
+    if (!staffNames) {
+      console.error(`Department "${department}" not found in collegeData for "${collegeName}".`);
+      return;
+    }
+
+    const departmentCounts = {};
+
+    // Filter publications by the selected year
+    const filteredData = selectedYear === "all" 
+      ? data 
+      : data.filter(publication => publication.year.toString() === selectedYear);
+
+    // Loop through the filtered data and accumulate publication counts per staff
+    filteredData.forEach(publication => {
+      const staffName = publication.full_name;
+
+      if (staffNames.includes(staffName)) {
+        if (!departmentCounts[staffName]) {
+          departmentCounts[staffName] = {
+            totalJournals: 0,
+            totalBookTitles: 0,
+            total0: 0,
+            totalPublications: 0,
+          };
+        }
+
+        // Count journals, book titles, and NaN publications
+        if (publication.journal && publication.journal !== '0') {
+          departmentCounts[staffName].totalJournals += 1;
+          totalJournals += 1;  // Accumulate total journals for summary
+        }
+
+        if (publication.booktitle && publication.booktitle !== '0') {
+          departmentCounts[staffName].totalBookTitles += 1;
+          totalBookTitles += 1;  // Accumulate total book titles for summary
+        }
+
+        if (publication.journal === '0' && publication.booktitle === '0') {
+          departmentCounts[staffName].total0 += 1;
+          total0 += 1;  // Accumulate NaN total for summary
+        }
+
+        departmentCounts[staffName].totalPublications =
+          departmentCounts[staffName].totalJournals +
+          departmentCounts[staffName].totalBookTitles +
+          departmentCounts[staffName].total0;
+
+        totalPublications += 1;  // Accumulate total publications for summary
+      }
+    });
+
+    // Count total staff in the department
+    totalStaffs += staffNames.length;
+
+    let isFirstRow = true; // To track if it's the first row for a department
+    staffNames.forEach(staffName => {
+      const counts = departmentCounts[staffName] || {
+        totalJournals: 0,
+        totalBookTitles: 0,
+        total0: 0,
+        totalPublications: 0,
+      };
+
+      const row = document.createElement('tr');
+
+      // Insert department name only for the first row and use rowspan for remaining rows
+      if (isFirstRow) {
+        row.innerHTML = `
+          <td rowspan="${staffNames.length}">${department}</td>
+          <td>${staffName}</td>
+          <td>${counts.totalJournals}</td>
+          <td>${counts.totalBookTitles}</td>
+          <td>${counts.total0}</td>
+          <td>${counts.totalPublications}</td>
+        `;
+        isFirstRow = false;
+      } else {
+        // For subsequent rows, leave department cell blank
+        row.innerHTML = `
+          <td>${staffName}</td>
+          <td>${counts.totalJournals}</td>
+          <td>${counts.totalBookTitles}</td>
+          <td>${counts.total0}</td>
+          <td>${counts.totalPublications}</td>
+        `;
       }
 
-      let totalJournals = 0;
-      let totalBookTitles = 0;
-      let totalNaN = 0;
-      let totalPublications = 0;
+      collegeBody.appendChild(row);
+    });
+  });
 
-      const collegeBody = document.getElementById('collegeBody');
-      collegeBody.innerHTML = ''; // Clear any existing rows
-
-      Object.keys(departments).forEach(department => {
-        const staffNames = departments[department];
-        if (!staffNames) {
-          console.error(`Department "${department}" not found in collegeData for "${collegeName}".`);
-          return;
-        }
-
-        const departmentCounts = {};
-
-        // Filter publications by the selected year
-        const filteredData = selectedYear === "all" 
-          ? data 
-          : data.filter(publication => publication.year.toString() === selectedYear);
-
-        filteredData.forEach(publication => {
-          const staffName = publication.full_name;
-
-          if (staffNames.includes(staffName)) {
-            if (!departmentCounts[staffName]) {
-              departmentCounts[staffName] = {
-                totalJournals: 0,
-                totalBookTitles: 0,
-                totalNaN: 0,
-                totalPublications: 0
-              };
-            }
-
-            if (publication.journal && publication.journal !== 'NaN') {
-              departmentCounts[staffName].totalJournals += 1;
-              totalJournals += 1;
-            }
-
-            if (publication.booktitle && publication.booktitle !== 'NaN') {
-              departmentCounts[staffName].totalBookTitles += 1;
-              totalBookTitles += 1;
-            }
-
-            if (publication.journal === 'NaN' && publication.booktitle === 'NaN') {
-              departmentCounts[staffName].totalNaN += 1;
-              totalNaN += 1;
-            }
-
-            departmentCounts[staffName].totalPublications =
-              departmentCounts[staffName].totalJournals +
-              departmentCounts[staffName].totalBookTitles +
-              departmentCounts[staffName].totalNaN;
-
-            totalPublications += 1;
-          }
-        });
-
-        // Display the data for each department and its staff
-        for (const staffName in departmentCounts) {
-          const counts = departmentCounts[staffName];
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${department}</td>
-            <td>${staffName}</td>
-            <td>${counts.totalJournals}</td>
-            <td>${counts.totalBookTitles}</td>
-            <td>${counts.totalNaN}</td>
-            <td>${counts.totalPublications}</td>
-          `;
-          collegeBody.appendChild(row);
-        }
-      });
-
-      // Update the overall totals for the college
-      document.getElementById('totalJournals').textContent = totalJournals;
-      document.getElementById('totalBookTitles').textContent = totalBookTitles;
-      document.getElementById('totalNaN').textContent = totalNaN;
-      document.getElementById('totalPublications').textContent = totalPublications;
-    }
+  // Update the overall totals for the college
+  document.getElementById('totalJournals').textContent = totalJournals;
+  document.getElementById('totalBookTitles').textContent = totalBookTitles;
+  document.getElementById('total0').textContent = total0;
+  document.getElementById('totalPublications').textContent = totalPublications;
+}
 
     // Event listener for college selection
     const collegeSelect = document.getElementById('college');
@@ -1480,7 +1520,7 @@ fetch(apiUrl)
         'Aquaculture_Technology':{name:'Aquaculture Technology Department', image:'images/aquatech.jpg'},
         'Physical_Education_and_Sport_Sciences':{name:'Physical Education and Sport Sciences', image:'images/sport.jpg'},
         'Educational_Psychology_and_Curriculm_Studies':{name:'Educational Psychology and Curriculm Studies', image:'images/culicullum.jpg'},
-        'Educational_Foundations_Mnagement_and_Lifelong_Learning':{name:'Educational Foundations Mnagement and Lifelong Learning', image:'images/lifelong.jpg'},
+        'Educational_Foundations_Management_and_Lifelong_Learning':{name:'Educational Foundations Mnagement and Lifelong Learning', image:'images/lifelong.jpg'},
         'SJMC':{name:'School of Journalism and Mass Communication', image:'images/sjmcs.jpeg'},
         'Petroleum_Science_and_Engineering':{name:'Petroleum Science and Engineering', image:'images/petro.png'},
         'Mining_and_Mineral_Processing_Engineering':{name:'Mining and Mineral Processing Engineering', image:'images/mining.jpg'},
@@ -1498,8 +1538,8 @@ fetch(apiUrl)
         'Economics':{name:'Economics Department', image:'images/economicss.png'},
         'Applied_Economics':{name:'Applied_Economics Department', image:'images/economicss.png'},
         'DOSE':{name:'Director Office School of Economics', image:'images/economicss.png'},
-        'CSE': {name:'Computer Science and Engineering', image:'images/cse.jpg'},
-        'ETE':{name:'Electronics and Telecommunication Engineering', image:'images/ete.jpg'},
+        'Computer_Science_and_Engineering': {name:'Computer Science and Engineering', image:'images/cse.jpg'},
+        'Electronics_and_Telecommunications_Engineering':{name:'Electronics and Telecommunication Engineering', image:'images/ete.jpg'},
         'DUCE':{name:'Dar es Salaam University College of Education', image:'images/ducee.jpg'},
                 };
 
@@ -1552,7 +1592,7 @@ fetch(apiUrl)
             departmentNameElement.style.position = 'absolute';
             departmentNameElement.style.transform = 'translateX(200px) translateY(200px)';
             departmentNameElement.style.fontSize = '20px'; // Set font size
-            departmentNameElement.style.color = 'orange'; // Set text color
+            departmentNameElement.style.color = 'black'; // Set text color
             departmentNameElement.style.textAlign = 'center'; // Center the text
             
 
@@ -1595,7 +1635,7 @@ fetch(apiUrl)
             // Set the staff name and apply styles
             displayArea.textContent = `Name: ${this.value}`;
             displayArea.style.fontSize = "18px";
-            displayArea.style.color = "orange";
+            displayArea.style.color = "black";
             displayArea.style.position = "absolute";
             displayArea.style.transform = "translateX(330px) translateY(200px)";
             displayArea.style.textAlign = "center";
@@ -1676,7 +1716,7 @@ function displayCollegeInfo(collegeName) {
         collegeNameElement.style.position = "absolute";
         collegeNameElement.style.transform  = "translateX(200px) translateY(200px)";
         collegeNameElement.style.fontSize = '18px'; // Set font size
-        collegeNameElement.style.color = 'orange'; // Set text color
+        collegeNameElement.style.color = 'black'; // Set text color
         collegeNameElement.style.textAlign = 'center'; // Center the text
         collegeNameElement.style.marginTop = '10px'; // Add margin at the top
 
@@ -1956,36 +1996,1606 @@ async function fetchYears() {
 // Call the function to fetch and display years
 fetchYears();
 
+// Fetch data from the API
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Create an object to store citations per year
+    const citationsPerYear = {};
 
-async function fetchStaffPublications(staff) {
-  try {
-    // Replace with your actual API endpoint
-    const response = await fetch(`https://udsm-google-scholar-fastapi.onrender.com/`);
-    
-    // Parse the response data
-    const data = await response.json();
-    
-    // Log the full response data to inspect its structure
-    console.log('Full API response:', data);
-    
-    // Check if publications exist
-    if (data && data.publications) {
-      // Log each publication with title, title_cites, and year to the console
-      data.publications.forEach(publication => {
-        console.log(`Title: ${publication.title}, Citations: ${publication.title_cites}, Year: ${publication.year}`);
+    // Iterate over each publication to extract year and citations (title_cites)
+    data.forEach(publication => {
+      if (publication.year && publication.title_cites) {
+        // Check if the year already exists in the object
+        if (!citationsPerYear[publication.year]) {
+          citationsPerYear[publication.year] = 0;  // Initialize year if not present
+        }
+
+        // Sum up the citations for each year
+        citationsPerYear[publication.year] += publication.title_cites;
+      }
+    });
+
+    // Log the citations per year for debugging
+    console.log('Citations per year:', citationsPerYear);
+
+    // Optional: If you want to sort the years in ascending order
+    const sortedYears = Object.keys(citationsPerYear).sort((a, b) => a - b);
+    sortedYears.forEach(year => {
+      console.log(`Year: ${year}, Citations: ${citationsPerYear[year]}`);
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+
+  // Fetch data from the API
+// Fetch data from the API
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Create an object to store total citations per staff per year
+    const citationsPerStaff = {};
+
+    // Iterate over each publication to extract staff name, year, and citations (title_cites)
+    data.forEach(publication => {
+      const staffName = publication.full_name;
+      const year = publication.year;
+      const citations = parseInt(publication.title_cites, 10); // Convert citations to an integer
+
+      // Ensure we have all necessary data and citations are a valid number
+      if (staffName && year && !isNaN(citations)) {
+        // If the staff name doesn't exist, initialize an object for them
+        if (!citationsPerStaff[staffName]) {
+          citationsPerStaff[staffName] = {};
+        }
+
+        // If the year doesn't exist for this staff, initialize the year's citation count
+        if (!citationsPerStaff[staffName][year]) {
+          citationsPerStaff[staffName][year] = 0;
+        }
+
+        // Sum up the citations for each staff per year
+        citationsPerStaff[staffName][year] += citations;
+      }
+    });
+
+    // Log the combined total citations per staff and year
+    Object.keys(citationsPerStaff).forEach(staffName => {
+      console.log(`Citations for ${staffName}:`);
+      Object.keys(citationsPerStaff[staffName]).forEach(year => {
+        console.log(`${staffName}: Year ${year}, Total Citations ${citationsPerStaff[staffName][year]}`);
       });
-    } else {
-      console.error('Publications data is missing in the response.');
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+
+  function handleStaffSelection(staffName) {
+  console.log('Selected staff:', staffName); // Debugging log
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      const citationsPerYear = {}; // Declare citationsPerYear here
+
+      // Loop through the publications
+      data.forEach(publication => {
+        if (publication.full_name === staffName && publication.year && publication.title_cites) {
+          const year = publication.year;
+          const citations = publication.title_cites;
+
+          // Summing citations for the same year
+          if (citationsPerYear[year]) {
+            citationsPerYear[year] += citations;
+          } else {
+            citationsPerYear[year] = citations;
+          }
+        }
+      });
+
+      console.log('Citations per Year:', citationsPerYear); // Debugging log
+
+      drawCitationsChart(citationsPerYear); // Call function to draw the chart with the processed data
+    })
+    .catch(error => console.error('Error fetching data:', error));
+}
+let citationsPerStaff = {};
+let publicationsPerStaff = {};
+let citationsChart = null; // Global variable for the chart instance
+
+// Fetching data from API (modify this part as per your API URL and structure)
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(publication => {
+      const staffName = publication.full_name;
+      const year = publication.year;
+      const citations = parseInt(publication.title_cites, 10); // Convert to integer
+      const publicationCount = 1; // Assuming 1 publication per entry
+
+      // Ensure valid data before proceeding
+      if (staffName && year && !isNaN(citations) && year !== 0) { // Exclude year 0
+        // Initialize if not already present
+        if (!citationsPerStaff[staffName]) {
+          citationsPerStaff[staffName] = {};
+          publicationsPerStaff[staffName] = {};
+        }
+
+        if (!citationsPerStaff[staffName][year]) {
+          citationsPerStaff[staffName][year] = 0;
+          publicationsPerStaff[staffName][year] = 0;
+        }
+
+        // Accumulate citations and publication count
+        citationsPerStaff[staffName][year] += citations;
+        publicationsPerStaff[staffName][year] += publicationCount;
+      }
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+// Function to draw chart
+function drawCitationsAndPublicationsChart(citationsPerYear, publicationsPerYear) {
+  const ctx = document.getElementById('citationsChart').getContext('2d');
+
+  const years = Object.keys(citationsPerYear).filter(year => year !== '0'); // Exclude year 0 from graph
+  const citations = Object.values(citationsPerYear).filter((_, index) => years[index] !== '0');
+  const publications = Object.values(publicationsPerYear).filter((_, index) => years[index] !== '0');
+
+  // Destroy the chart if it already exists to avoid overlap
+  if (citationsChart) {
+    citationsChart.destroy(); // Only destroy if the chart exists
+  }
+
+  // Create the new chart
+  citationsChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: years,
+      datasets: [
+        {
+          label: 'Publications',
+          type: 'bar',
+          data: publications,
+          backgroundColor: '#0000FF', // Pure blue for bars
+          borderColor: '#0000FF',
+          borderWidth: 1,
+          barThickness: 40, // Increase bar thickness
+          yAxisID: 'y',
+          order: 1 // Bars are drawn first
+        },
+        {
+          label: 'Citations',
+          type: 'line',
+          data: citations,
+          borderColor: '#FFA500', // Pure orange for the line
+          backgroundColor: '#FFA500',
+          fill: false,
+          borderWidth: 2, // Thicker line
+          pointRadius: 4, // Larger points
+          pointBackgroundColor: '#FFA500',
+          tension: 0, // No curve (straight line)
+          yAxisID: 'y1',
+          order: 0 // Line is drawn on top of bars
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false, // Allow flexibility for chart size
+      scales: {
+        y: {
+          beginAtZero: true,
+          type: 'linear',
+          position: 'left',
+          title: {
+            display: true,
+            text: 'Publications'
+          },
+          ticks: {
+            stepSize: 1,
+            font: {
+              size: 14 // Larger font size for better readability
+            }
+          }
+        },
+        y1: {
+          beginAtZero: true,
+          type: 'linear',
+          position: 'right',
+          title: {
+            display: true,
+            text: 'Citations'
+          },
+          grid: {
+            drawOnChartArea: false // No gridlines on the right axis
+          },
+          ticks: {
+            font: {
+              size: 14
+            }
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Year'
+          },
+          ticks: {
+            font: {
+              size: 14 // Larger font for the year labels
+            }
+          }
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Publications and Citation History',
+          font: {
+            size: 18 // Larger title font
+          }
+        },
+        legend: {
+          position: 'top',
+          labels: {
+            font: {
+              size: 14 // Larger legend text
+            }
+          }
+        }
+      },
+      layout: {
+        padding: {
+          top: 20,
+          bottom: 20
+        }
+      },
+      elements: {
+        line: {
+          tension: 0 // Straight line, no curve
+        }
+      }
     }
-    
-    return data.publications;
+  });
+}
+
+// Handle staff selection change
+document.getElementById('staff').addEventListener('change', function (event) {
+  const selectedStaffName = event.target.value;
+
+  const citationsPerYear = citationsPerStaff[selectedStaffName];
+  const publicationsPerYear = publicationsPerStaff[selectedStaffName];
+
+  // If valid data exists, draw the chart
+  if (citationsPerYear && publicationsPerYear) {
+    drawCitationsAndPublicationsChart(citationsPerYear, publicationsPerYear);
+  } else {
+    console.error('No data available for this staff.');
+  }
+});
+
+
+
+let citationsPerDepartment = {};
+let publicationsPerDepartment = {};
+
+// Assuming API provides staff publications data, including department and year
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(publication => {
+      const staffName = publication.full_name;
+      const departmentName = publication.department;
+      const year = publication.year;
+      const citations = parseInt(publication.title_cites, 10); // Convert to integer
+      const publicationCount = 1; // Assuming 1 publication per entry
+
+      // Skip records with invalid data or year 0
+      if (!departmentName || !year || isNaN(citations) || year === 0) {
+        return;
+      }
+
+      // Initialize department's data if it doesn't already exist
+      if (!citationsPerDepartment[departmentName]) {
+        citationsPerDepartment[departmentName] = {};
+        publicationsPerDepartment[departmentName] = {};
+      }
+
+      // Initialize data for the specific year if not already present
+      if (!citationsPerDepartment[departmentName][year]) {
+        citationsPerDepartment[departmentName][year] = 0;
+        publicationsPerDepartment[departmentName][year] = 0;
+      }
+
+      // Aggregate data by adding the citations and publications for the current staff member
+      citationsPerDepartment[departmentName][year] += citations;
+      publicationsPerDepartment[departmentName][year] += publicationCount;
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+
+function normalizeDepartmentName(departmentName) {
+  // Replace underscores with spaces
+  return departmentName.replace(/_/g, ' ');
+}
+
+function drawDepartmentChart(departmentName) {
+  // Normalize the department name to match the format in the API
+  const normalizedDepartmentName = normalizeDepartmentName(departmentName);
+
+  // Now fetch the data using the normalized name
+  const citationsPerYear = citationsPerDepartment[normalizedDepartmentName];
+  const publicationsPerYear = publicationsPerDepartment[normalizedDepartmentName];
+
+  // If no data is available for the normalized department name, show a message and exit
+  if (!citationsPerYear || !publicationsPerYear || Object.keys(citationsPerYear).length === 0 || Object.keys(publicationsPerYear).length === 0) {
+    console.error(`No data available for department: ${normalizedDepartmentName}`);
+    return;
+  }
+
+  // Extract years and corresponding data
+  const years = Object.keys(citationsPerYear).filter(year => year !== '0').sort();
+  const citations = years.map(year => citationsPerYear[year]);
+  const publications = years.map(year => publicationsPerYear[year]);
+
+  // If both citations and publications are empty for all years, do not draw the chart
+  if (citations.length === 0 && publications.length === 0) {
+    console.error(`No publications or citations available for department: ${departmentName}`);
+    return;
+  }
+
+  const ctx = document.getElementById('departmentChart').getContext('2d');
+
+  // Destroy the previous chart if it exists
+  if (citationsChart) {
+    citationsChart.destroy();
+  }
+
+  // Create the new chart
+  citationsChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: years,
+      datasets: [
+        {
+          label: 'Publications',
+          type: 'bar',
+          data: publications,
+          backgroundColor: '#0000FF', // Blue for bars
+          borderColor: '#0000FF',
+          borderWidth: 1,
+          barThickness: 40,
+          yAxisID: 'y',
+          order: 1
+        },
+        {
+          label: 'Citations',
+          type: 'line',
+          data: citations,
+          borderColor: '#FFA500', // Orange for the line
+          backgroundColor: '#FFA500',
+          fill: false,
+          borderWidth: 2,
+          pointRadius: 4,
+          tension: 0,
+          yAxisID: 'y1',
+          order: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Publications'
+          }
+        },
+        y1: {
+          beginAtZero: true,
+          position: 'right',
+          title: {
+            display: true,
+            text: 'Citations'
+          },
+          grid: {
+            drawOnChartArea: false // Only draw gridlines on the left y-axis
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Year'
+          }
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: `Department ${departmentName}: Publications and Citations`
+        },
+        legend: {
+          position: 'top'
+        }
+      }
+    }
+  });
+}
+
+document.getElementById('department').addEventListener('change', function (event) {
+  const selectedDepartmentName = event.target.value;
+
+  if (selectedDepartmentName) {
+    drawDepartmentChart(selectedDepartmentName);
+  } else {
+    console.error('No department selected');
+  }
+});
+
+
+
+let citationsPerYear = {};
+let publicationsPerYear = {};
+
+// Assuming API provides staff publications data, including college and year
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(publication => {
+      const collegeName = publication.college;
+      const year = publication.year;
+      const citations = parseInt(publication.title_cites, 10); // Convert to integer
+      const publicationCount = 1; // Assuming 1 publication per entry
+
+      // Skip records with invalid data or year 0
+      if (!collegeName || !year || isNaN(citations) || year === 0) {
+        return;
+      }
+
+      // Initialize college's data if it doesn't already exist
+      if (!citationsPerYear[collegeName]) {
+        citationsPerYear[collegeName] = {};
+        publicationsPerYear[collegeName] = {};
+      }
+
+      // Initialize data for the specific year if not already present
+      if (!citationsPerYear[collegeName][year]) {
+        citationsPerYear[collegeName][year] = 0;
+        publicationsPerYear[collegeName][year] = 0;
+      }
+
+      // Aggregate data by adding the citations and publications for the current year
+      citationsPerYear[collegeName][year] += citations;
+      publicationsPerYear[collegeName][year] += publicationCount;
+    });
+
+    // Now that we have aggregated data, we can draw the college chart when the button is clicked
+    document.getElementById('createBarChartBtn').addEventListener('click', () => drawCollegeYearChart('College Name'));
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+// Normalize college names (replace underscores with spaces)
+function normalizeCollegeName(collegeName) {
+  return collegeName.replace(/_/g, ' ');
+}
+
+let collegeYearChart = null;
+
+// Function to draw the college year chart
+function drawCollegeYearChart(collegeName) {
+  const normalizedCollegeName = normalizeCollegeName(collegeName);
+
+  // Fetch the data using the normalized name
+  const citationsPerYearData = citationsPerYear[normalizedCollegeName];
+  const publicationsPerYearData = publicationsPerYear[normalizedCollegeName];
+
+  // If no data is available for the normalized college name, show a message and exit
+  if (!citationsPerYearData || !publicationsPerYearData || Object.keys(citationsPerYearData).length === 0 || Object.keys(publicationsPerYearData).length === 0) {
+    console.error(`No data available for college: ${normalizedCollegeName}`);
+    return;
+  }
+
+  // Extract years and corresponding data
+  const years = Object.keys(citationsPerYearData).filter(year => year !== '0').sort();
+  const citations = years.map(year => citationsPerYearData[year]);
+  const publications = years.map(year => publicationsPerYearData[year]);
+
+  // If both citations and publications are empty for all years, do not draw the chart
+  if (citations.length === 0 && publications.length === 0) {
+    console.error(`No publications or citations available for college: ${collegeName}`);
+    return;
+  }
+
+  const ctx = document.getElementById('collegeYearChart').getContext('2d');
+
+  // Check if the chart instance exists before trying to destroy it
+  if (collegeYearChart !== null) {
+    collegeYearChart.destroy();
+  }
+
+  // Create the new chart
+  collegeYearChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: years,
+      datasets: [
+        {
+          label: 'Publications',
+          type: 'bar',
+          data: publications,
+          backgroundColor: '#0000FF', // Blue for bars
+          borderColor: '#0000FF',
+          borderWidth: 1,
+          barThickness: 40,
+          yAxisID: 'y',
+          order: 1
+        },
+        {
+          label: 'Citations',
+          type: 'line',
+          data: citations,
+          borderColor: '#FFA500', // Orange for the line
+          backgroundColor: '#FFA500',
+          fill: false,
+          borderWidth: 2,
+          pointRadius: 4,
+          tension: 0, // Straight line
+          yAxisID: 'y1',
+          order: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Publications'
+          }
+        },
+        y1: {
+          beginAtZero: true,
+          position: 'right',
+          title: {
+            display: true,
+            text: 'Citations'
+          },
+          grid: {
+            drawOnChartArea: false // Only draw gridlines on the left y-axis
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Year'
+          }
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: `College ${collegeName}: Publications and Citations`
+        },
+        legend: {
+          position: 'top'
+        }
+      }
+    }
+  });
+}
+document.getElementById('college').addEventListener('change', function (event) {
+  const selectedCollegeName = event.target.value;
+
+  if (selectedCollegeName) {
+    drawCollegeChart(selectedCollegeName);
+  } else {
+    console.error('No college selected');
+  }
+});
+
+let staffCounts = {}; // Holds counts of Journals, Book Titles, and NaN for each staff
+let publicationsPieChart = null; // Global variable for the pie chart
+
+// Fetching data from API (modify this part as per your API URL and structure)
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(publication => {
+      const staffName = publication.full_name;
+
+      // Initialize staff counts for publications if not already present
+      if (!staffCounts[staffName]) {
+        staffCounts[staffName] = {
+          totalJournals: 0,
+          totalBookTitles: 0,
+          total0: 0
+        };
+      }
+
+      // Update publication counts
+      if (publication.journal && publication.journal !== '0') {
+        staffCounts[staffName].totalJournals += 1;
+      }
+
+      if (publication.booktitle && publication.booktitle !== '0') {
+        staffCounts[staffName].totalBookTitles += 1;
+      }
+
+      if (publication.journal === '0' && publication.booktitle === '0') {
+        staffCounts[staffName].total0 += 1;
+      }
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+// Function to draw the pie chart for publications
+function drawPublicationsPieChart(publicationCounts) {
+  const ctx = document.getElementById('publicationsPieChart').getContext('2d');
+
+  // Destroy the existing pie chart if it already exists
+  if (publicationsPieChart) {
+    publicationsPieChart.destroy(); // Only destroy if the chart exists
+  }
+
+  // Create a new pie chart
+  publicationsPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Journals', 'Conferences', 'Books'],
+      datasets: [{
+        label: 'Publications',
+        data: [
+          publicationCounts.totalJournals, 
+          publicationCounts.totalBookTitles, 
+          publicationCounts.total0
+        ],
+        backgroundColor: ['#0000FF', '#FFA500', '#008000'], // Blue, Orange, Green
+        borderColor: ['#0000FF', '#FFA500', '#008000'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Publications Breakdown',
+          font: {
+            size: 18 // Larger title font
+          }
+        },
+        legend: {
+          position: 'top',
+          labels: {
+            font: {
+              size: 14 // Larger legend text
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// Handle staff selection change
+document.getElementById('staff').addEventListener('change', function (event) {
+  const selectedStaffName = event.target.value;
+
+  // Get publication counts for the selected staff
+  const publicationCounts = staffCounts[selectedStaffName];
+
+  // If valid publication counts exist, draw the pie chart
+  if (publicationCounts) {
+    drawPublicationsPieChart(publicationCounts);
+  } else {
+    console.error('No publication data available for this staff.');
+  }
+});
+
+let departmentCounts = {}; // Holds counts of Journals, Book Titles, and NaN for each department
+let departmentPublicationsPieChart = null; // Global variable for the department pie chart
+
+// Function to normalize department names (replace underscores with spaces)
+function normalizeDepartmentName(departmentName) {
+  return departmentName.replace(/_/g, ' ');
+}
+
+// Fetching data from API (modify this part as per your API URL and structure)
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(publication => {
+      const departmentName = normalizeDepartmentName(publication.department); // Normalize the department name
+
+      // Initialize department counts for publications if not already present
+      if (!departmentCounts[departmentName]) {
+        departmentCounts[departmentName] = {
+          totalJournals: 0,
+          totalBookTitles: 0,
+          total0: 0
+        };
+      }
+
+      // Update publication counts
+      if (publication.journal && publication.journal !== '0') {
+        departmentCounts[departmentName].totalJournals += 1;
+      }
+
+      if (publication.booktitle && publication.booktitle !== '0') {
+        departmentCounts[departmentName].totalBookTitles += 1;
+      }
+
+      if (publication.journal === '0' && publication.booktitle === '0') {
+        departmentCounts[departmentName].total0 += 1;
+      }
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+// Function to draw the pie chart for department publications
+function drawDepartmentPublicationsPieChart(publicationCounts) {
+  const ctx = document.getElementById('departmentPublicationsPieChart').getContext('2d');
+
+  // Destroy the existing pie chart if it already exists
+  if (departmentPublicationsPieChart) {
+    departmentPublicationsPieChart.destroy(); // Only destroy if the chart exists
+  }
+
+  // Create a new pie chart
+  departmentPublicationsPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Journals', 'Conferences', 'Books'],
+      datasets: [{
+        label: 'Publications',
+        data: [
+          publicationCounts.totalJournals, 
+          publicationCounts.totalBookTitles, 
+          publicationCounts.total0
+        ],
+        backgroundColor: ['#0000FF', '#FFA500', '#008000'], // Blue, Orange, Green
+        borderColor: ['#0000FF', '#FFA500', '#008000'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Department Publications Breakdown',
+          font: {
+            size: 18 // Larger title font
+          }
+        },
+        legend: {
+          position: 'top',
+          labels: {
+            font: {
+              size: 14 // Larger legend text
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// Handle department selection change
+document.getElementById('department').addEventListener('change', function (event) {
+  const selectedDepartmentName = normalizeDepartmentName(event.target.value); // Normalize the selected department name
+
+  // Get publication counts for the selected department
+  const publicationCounts = departmentCounts[selectedDepartmentName];
+
+  // If valid publication counts exist, draw the pie chart
+  if (publicationCounts) {
+    drawDepartmentPublicationsPieChart(publicationCounts);
+  } else {
+    console.error('No publication data available for this department.');
+  }
+});
+
+let publicationsPerCollegePie = {};
+
+// Assuming API provides staff publications data, including college
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(publication => {
+      const collegeName = publication.college;
+
+      // Normalize the college name (replace underscores with spaces)
+      const normalizedCollegeName = normalizeCollegeName(collegeName);
+
+      // Initialize college data if it doesn't already exist
+      if (!publicationsPerCollegePie[normalizedCollegeName]) {
+        publicationsPerCollegePie[normalizedCollegeName] = {
+          totalJournals: 0,
+          totalBookTitles: 0,
+          total0: 0
+        };
+      }
+
+      // Update publication counts
+      if (publication.journal && publication.journal !== '0') {
+        publicationsPerCollegePie[normalizedCollegeName].totalJournals += 1;
+      }
+
+      if (publication.booktitle && publication.booktitle !== '0') {
+        publicationsPerCollegePie[normalizedCollegeName].totalBookTitles += 1;
+      }
+
+      if (publication.journal === '0' && publication.booktitle === '0') {
+        publicationsPerCollegePie[normalizedCollegeName].total0 += 1;
+      }
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+// Function to normalize college names (replace underscores with spaces)
+function normalizeCollegeName(collegeName) {
+  return collegeName.replace(/_/g, ' ');
+}
+
+let collegePublicationsPieChart = null;
+
+// Function to draw the pie chart for college publications
+function drawCollegePublicationsPieChart(publicationCounts) {
+  const canvas = document.getElementById('collegePublicationsPieChart');
+  
+  // Check if canvas exists before accessing its context
+  if (!canvas) {
+    console.error('Pie chart canvas for college not found');
+    return;
+  }
+
+  const ctx = canvas.getContext('2d');
+
+  // Destroy the existing pie chart if it already exists
+  if (collegePublicationsPieChart) {
+    collegePublicationsPieChart.destroy();
+  }
+
+  // Create a new pie chart
+  collegePublicationsPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Journals', 'Conferences', 'Books'],
+      datasets: [{
+        label: 'Publications',
+        data: [
+          publicationCounts.totalJournals, 
+          publicationCounts.totalBookTitles, 
+          publicationCounts.total0
+        ],
+        backgroundColor: ['#0000FF', '#FFA500', '#008000'], // Blue, Orange, Green
+        borderColor: ['#0000FF', '#FFA500', '#008000'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'College Publications Breakdown',
+          font: {
+            size: 18 // Larger title font
+          }
+        },
+        legend: {
+          position: 'top',
+          labels: {
+            font: {
+              size: 14 // Larger legend text
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// Handle college selection change
+document.getElementById('college').addEventListener('change', function (event) {
+  const selectedCollegeName = normalizeCollegeName(event.target.value); // Normalize the selected college name
+
+  // Get publication counts for the selected college
+  const publicationCounts = publicationsPerCollegePie[selectedCollegeName];
+
+  // If valid publication counts exist, draw the pie chart
+  if (publicationCounts) {
+    drawCollegePublicationsPieChart(publicationCounts);
+  } else {
+    console.error('No publication data available for this college.');
+  }
+});
+
+
+let universityPublications = {
+  totalJournals: 0,
+  totalBookTitles: 0,
+  total0: 0
+};
+
+// Assuming API provides staff publications data, including college
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(publication => {
+      const collegeName = publication.college;
+
+      // Normalize the college name
+      const normalizedCollegeName = normalizeCollegeName(collegeName);
+
+      // Initialize college data if it doesn't already exist
+      if (!publicationsPerCollegePie[normalizedCollegeName]) {
+        publicationsPerCollegePie[normalizedCollegeName] = {
+          totalJournals: 0,
+          totalBookTitles: 0,
+          total0: 0
+        };
+      }
+
+      // Update publication counts for the college
+      if (publication.journal && publication.journal !== '0') {
+        publicationsPerCollegePie[normalizedCollegeName].totalJournals += 1;
+        universityPublications.totalJournals += 1; // Add to university totals
+      }
+
+      if (publication.booktitle && publication.booktitle !== '0') {
+        publicationsPerCollegePie[normalizedCollegeName].totalBookTitles += 1;
+        universityPublications.totalBookTitles += 1; // Add to university totals
+      }
+
+      if (publication.journal === '0' && publication.booktitle === '0') {
+        publicationsPerCollegePie[normalizedCollegeName].total0 += 1;
+        universityPublications.total0 += 1; // Add to university totals
+      }
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+// Function to normalize college names (replace underscores with spaces)
+function normalizeCollegeName(collegeName) {
+  return collegeName.replace(/_/g, ' ');
+}
+
+let universityPublicationsPieChart = null;
+
+// Function to draw the pie chart for university publications
+function drawUniversityPublicationsPieChart() {
+  const canvas = document.getElementById('universityPublicationsPieChart');
+  
+  // Check if canvas exists before accessing its context
+  if (!canvas) {
+    console.error('Pie chart canvas for university not found');
+    return;
+  }
+
+  const ctx = canvas.getContext('2d');
+
+  // Destroy the existing pie chart if it already exists
+  if (universityPublicationsPieChart) {
+    universityPublicationsPieChart.destroy();
+  }
+
+  // Create a new pie chart for university-level publications
+  universityPublicationsPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Journals', 'Conferences', 'Books'],
+      datasets: [{
+        label: 'University Publications',
+        data: [
+          universityPublications.totalJournals, 
+          universityPublications.totalBookTitles, 
+          universityPublications.total0
+        ],
+        backgroundColor: ['#0000FF', '#FFA500', '#008000'], // Blue, Orange, Green
+        borderColor: ['#0000FF', '#FFA500', '#008000'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'University Publications Breakdown',
+          font: {
+            size: 18 // Larger title font
+          }
+        },
+        legend: {
+          position: 'top',
+          labels: {
+            font: {
+              size: 14 // Larger legend text
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// Trigger to draw the university chart once data is fetched and processed
+document.getElementById('drawUniversityChart').addEventListener('click', function () {
+  drawUniversityPublicationsPieChart();
+});
+
+
+
+// Function to draw the college chart
+function drawCollegeChart() {
+  const canvas = document.getElementById('universityChart'); // Updated with ID 'universityChart'
+  const ctx = canvas.getContext('2d');
+
+  // Check if the chart instance exists before trying to destroy it
+  if (typeof collegeChart !== 'undefined' && collegeChart !== null) {
+    collegeChart.destroy();
+  }
+
+  // Get the college names and their respective data for publications and citations
+  const collegeNames = Object.keys(publicationsPerCollege).map(college => normalizeCollegeName(college));
+  const publications = Object.keys(publicationsPerCollege).map(college => publicationsPerCollege[college]);
+  const citations = Object.keys(citationsPerCollege).map(college => citationsPerCollege[college]);
+
+  // Ensure that there is data to display, otherwise exit
+  if (collegeNames.length === 0 || publications.length === 0 || citations.length === 0) {
+    console.error('No data available to display in the chart.');
+    return;
+  }
+
+  // Create the new chart
+  collegeChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: collegeNames, // X-axis: College names
+      datasets: [
+        {
+          label: 'Publications',
+          type: 'bar',
+          data: publications, // Y-axis: Publications for each college
+          backgroundColor: '#0000FF', // Blue for bars
+          borderColor: '#0000FF',
+          borderWidth: 1,
+          barThickness: 40,
+          yAxisID: 'y',
+          order: 1
+        },
+        {
+          label: 'Citations',
+          type: 'line',
+          data: citations, // Y-axis: Citations for each college
+          borderColor: '#FFA500', // Orange for the line
+          backgroundColor: '#FFA500',
+          fill: false,
+          borderWidth: 2,
+          pointRadius: 4,
+          tension: 0, // Straight line
+          yAxisID: 'y1',
+          order: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Publications'
+          }
+        },
+        y1: {
+          beginAtZero: true,
+          position: 'right',
+          title: {
+            display: true,
+            text: 'Citations'
+          },
+          grid: {
+            drawOnChartArea: false // Only draw gridlines on the left y-axis
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Colleges'
+          }
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'College: Publications and Citations by College'
+        },
+        legend: {
+          position: 'top'
+        }
+      }
+    }
+  });
+}
+
+let publicationData = []; // Declare globally
+
+// Function to calculate total citations per staff
+function calculateTotalCitationsPerStaff() {
+  let staffCitations = [];
+
+  Object.keys(citationsPerStaff).forEach(staffName => {
+    let totalCitations = 0;
+
+    Object.values(citationsPerStaff[staffName]).forEach(citationsInYear => {
+      totalCitations += citationsInYear;
+    });
+
+    staffCitations.push({
+      name: staffName,
+      citations: totalCitations
+    });
+  });
+
+  // Sort staff by citations in descending order
+  staffCitations.sort((a, b) => b.citations - a.citations);
+
+  return staffCitations;
+}
+
+// Function to calculate total citations per publication
+function calculateTotalCitationsPerPublication(publicationData) {
+  let publicationCitations = [];
+
+  publicationData.forEach(publication => {
+    const staffName = publication.full_name;
+    const title = publication.title;
+    const citations = parseInt(publication.title_cites, 10);
+
+    publicationCitations.push({
+      title: title,
+      staffName: staffName,
+      citations: citations
+    });
+  });
+
+  // Sort publications by citations in descending order
+  publicationCitations.sort((a, b) => b.citations - a.citations);
+
+  return publicationCitations;
+}
+
+// Function to generate a table for top-ranked staff
+function displayTopRankedStaff() {
+  const staffCitations = calculateTotalCitationsPerStaff();
+  const container = document.getElementById('staffRankingTableContainer');
+  container.innerHTML = ''; // Clear previous data
+
+  const title = document.createElement('h2');
+  title.textContent = 'UNIVERSITY OF DAR ES SALAAM TOP RANKED SCHOLAR';
+  container.appendChild(title);
+
+  const table = document.createElement('table');
+  table.classList.add('rankedTable'); // Add custom class for styling
+
+  const thead = document.createElement('thead');
+  thead.innerHTML = `
+    <tr>
+      <th>S/N</th>
+      <th>Staff Name</th>
+      <th>Total Citations</th>
+    </tr>
+  `;
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  staffCitations.forEach((staff, index) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${staff.name}</td>
+      <td>${staff.citations}</td>
+    `;
+    tbody.appendChild(row);
+  });
+  table.appendChild(tbody);
+  container.appendChild(table);
+}
+
+// Function to generate a table for top-ranked publications
+function displayTopRankedPublications() {
+  const publicationCitations = calculateTotalCitationsPerPublication(publicationData);
+  const container = document.getElementById('publicationRankingTableContainer');
+  container.innerHTML = ''; // Clear previous data
+
+  const title = document.createElement('h2');
+  title.textContent = 'UNIVERSITY OF DAR ES SALAAM TOP RANKED PUBLICATIONS';
+  container.appendChild(title);
+
+  const table = document.createElement('table');
+  table.classList.add('rankedTable'); // Add custom class for styling
+
+  const thead = document.createElement('thead');
+  thead.innerHTML = `
+    <tr>
+      <th>S/N</th>
+      <th>Publication Title</th>
+      <th>Staff Name</th>
+      <th>Citations</th>
+    </tr>
+  `;
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  publicationCitations.forEach((publication, index) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${publication.title}</td>
+      <td>${publication.staffName}</td>
+      <td>${publication.citations}</td>
+    `;
+    tbody.appendChild(row);
+  });
+  table.appendChild(tbody);
+  container.appendChild(table);
+}
+
+// Function to display summary
+function displaySummary(data) {
+  const uniqueStaffNames = new Set();
+  let totalJournal = 0;
+  let totalBookTitle = 0;
+  let total0InBoth = 0;
+  let totalCitations = 0;
+  let hIndex = 0;
+  let i10Index = 0;
+
+  data.forEach(publication => {
+    if (publication.full_name) {
+      uniqueStaffNames.add(publication.full_name);
+    }
+    if (publication.journal && publication.journal !== '0') {
+      totalJournal++;
+    }
+    if (publication.booktitle && publication.booktitle !== '0') {
+      totalBookTitle++;
+    }
+    if (publication.journal === '0' && publication.booktitle === '0') {
+      total0InBoth++;
+    }
+    totalCitations += parseInt(publication.title_cites, 10);
+    hIndex = publication.h_index; // Assuming h_index is unique and consistent
+    i10Index = publication.i10_index; // Assuming i10_index is unique and consistent
+  });
+
+  const totalUniqueStaff = uniqueStaffNames.size;
+
+  const summaryContainer = document.getElementById('summaryContainer');
+  summaryContainer.innerHTML = `
+    <h2>Summary</h2>
+    <p>Total unique staff: ${totalUniqueStaff}</p>
+    <p>Total journals: ${totalJournal}</p>
+    <p>Total book titles: ${totalBookTitle}</p>
+    <p>Total unknown types: ${total0InBoth}</p>
+    <p>Total citations: ${totalCitations}</p>
+    <p>h-index: ${hIndex}</p>
+    <p>i10-index: ${i10Index}</p>
+  `;
+}
+
+// Fetch publication data from API
+async function fetchPublicationData() {
+  try {
+    const response = await fetch('https://udsm-google-scholar-fastapi.onrender.com/');
+    publicationData = await response.json();
+    displaySummary(publicationData); // Display summary after fetching data
   } catch (error) {
-    console.error('Error fetching publications:', error);
+    console.error('Error fetching publication data:', error);
   }
 }
 
-// Example: Call the function for a specific staff member (staffId)
-fetchStaffPublications('staffId123');
+// Event listeners for button clicks
+document.getElementById('topRankedStaffButton').addEventListener('click', () => {
+  document.getElementById('publicationRankingTableContainer').innerHTML = ''; // Clear publication table
+  displayTopRankedStaff();
+});
+
+document.getElementById('topRankedPublicationButton').addEventListener('click', async () => {
+  document.getElementById('staffRankingTableContainer').innerHTML = ''; // Clear staff table
+  await fetchPublicationData(); // Ensure publicationData is fetched
+  displayTopRankedPublications();
+});
+
+// Initial fetch to display summary on page load
+fetchPublicationData();
+
+// Fetch publication data from API
+async function fetchPublicationData() {
+  try {
+    const response = await fetch('https://udsm-google-scholar-fastapi.onrender.com/');
+    publicationData = await response.json();
+  } catch (error) {
+    console.error('Error fetching publication data:', error);
+  }
+}
+
+// Event listeners for button clicks
+document.getElementById('topRankedStaffButton').addEventListener('click', () => {
+  document.getElementById('publicationRankingTableContainer').innerHTML = ''; // Clear publication table
+  displayTopRankedStaff();
+});
+
+document.getElementById('topRankedPublicationButton').addEventListener('click', async () => {
+  document.getElementById('staffRankingTableContainer').innerHTML = ''; // Clear staff table
+  await fetchPublicationData(); // Ensure publicationData is fetched
+  displayTopRankedPublications();
+});
+
+// Fetch publication data from API
+async function fetchPublicationData() {
+  try {
+    const response = await fetch('https://udsm-google-scholar-fastapi.onrender.com/');
+    publicationData = await response.json();
+  } catch (error) {
+    console.error('Error fetching publication data:', error);
+  }
+}
+
+// Event listeners for button clicks
+document.getElementById('topRankedStaffButton').addEventListener('click', () => {
+  displayTopRankedStaff();
+});
+
+document.getElementById('topRankedPublicationButton').addEventListener('click', async () => {
+  await fetchPublicationData(); // Ensure publicationData is fetched
+  displayTopRankedPublications();
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Your JavaScript code here
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      function displayUniversityData(collegeData, selectedYear = "all") {
+        let totalJournals = 0;
+        let totalBookTitles = 0;
+        let total0 = 0;
+        let totalPublications = 0;
+        let totalDepartments = 0;
+        let totalStaff = 0;
+        let totalCitations = 0;
+        let totalHIndex = 0;
+        let totalI10Index = 0;
+
+        const universityBody = document.getElementById('universityBody');
+        universityBody.innerHTML = ''; // Clear existing rows
+
+        Object.keys(collegeData).forEach(collegeName => {
+          const departments = collegeData[collegeName];
+          if (!departments) {
+            console.error(`College "${collegeName}" not found in collegeData.`);
+            return;
+          }
+
+          let collegeTotalJournals = 0;
+          let collegeTotalBookTitles = 0;
+          let collegeTotal0 = 0;
+          let collegeTotalPublications = 0;
+          let collegeTotalStaff = 0;
+          let collegeTotalCitations = 0;
+          let collegeTotalHIndex = 0;
+          let collegeTotalI10Index = 0;
+
+          const uniqueStaffHIndex = new Set();
+          const uniqueStaffI10Index = new Set();
+
+          Object.keys(departments).forEach(department => {
+            const staffNames = departments[department];
+            if (!staffNames) {
+              console.error(`Department "${department}" not found in collegeData for "${collegeName}".`);
+              return;
+            }
+
+            totalDepartments += 1; // Increment department count
+
+            const departmentCounts = {};
+
+            const filteredData = selectedYear === "all"
+              ? data
+              : data.filter(publication => publication.year.toString() === selectedYear);
+
+            filteredData.forEach(publication => {
+              const staffName = publication.full_name;
+
+              if (staffNames.includes(staffName)) {
+                if (!departmentCounts[staffName]) {
+                  departmentCounts[staffName] = {
+                    totalJournals: 0,
+                    totalBookTitles: 0,
+                    total0: 0,
+                    totalPublications: 0,
+                    citations: 0
+                  };
+                }
+
+                // Aggregate publications
+                if (publication.journal && publication.journal !== '0') {
+                  departmentCounts[staffName].totalJournals += 1;
+                  collegeTotalJournals += 1;
+                  totalJournals += 1;
+                }
+
+                if (publication.booktitle && publication.booktitle !== '0') {
+                  departmentCounts[staffName].totalBookTitles += 1;
+                  collegeTotalBookTitles += 1;
+                  totalBookTitles += 1;
+                }
+
+                if ((publication.journal === '0' || !publication.journal) &&
+                  (publication.booktitle === '0' || !publication.booktitle)) {
+                  departmentCounts[staffName].total0 += 1;
+                  collegeTotal0 += 1;
+                  total0 += 1;
+                }
+
+                if (publication.title_cites && !isNaN(publication.title_cites) && publication.title_cites !== 0) {
+                  departmentCounts[staffName].citations += parseInt(publication.title_cites, 10);
+                  collegeTotalCitations += parseInt(publication.title_cites, 10);
+                  totalCitations += parseInt(publication.title_cites, 10);
+                }
+
+                if (!uniqueStaffHIndex.has(staffName) && publication.h_index && !isNaN(publication.h_index) && publication.h_index !== 0) {
+                  uniqueStaffHIndex.add(staffName);
+                  collegeTotalHIndex += parseInt(publication.h_index, 10);
+                  totalHIndex += parseInt(publication.h_index, 10);
+                }
+
+                if (!uniqueStaffI10Index.has(staffName) && publication.i10_index && !isNaN(publication.i10_index) && publication.i10_index !== 0) {
+                  uniqueStaffI10Index.add(staffName);
+                  collegeTotalI10Index += parseInt(publication.i10_index, 10);
+                  totalI10Index += parseInt(publication.i10_index, 10);
+                }
+
+                departmentCounts[staffName].totalPublications =
+                  departmentCounts[staffName].totalJournals +
+                  departmentCounts[staffName].totalBookTitles +
+                  departmentCounts[staffName].total0;
+
+                collegeTotalPublications += departmentCounts[staffName].totalPublications;
+                totalPublications += departmentCounts[staffName].totalPublications;
+              }
+            });
+
+            collegeTotalStaff += staffNames.length;
+            totalStaff += staffNames.length;
+          });
+
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${collegeName}</td>
+            <td>${Object.keys(departments).length}</td>
+            <td>${collegeTotalStaff}</td>
+            <td>${collegeTotalCitations}</td>
+            <td>${collegeTotalHIndex}</td>
+            <td>${collegeTotalI10Index}</td>
+            <td>${collegeTotalJournals}</td>
+            <td>${collegeTotalBookTitles}</td>
+            <td>${collegeTotal0}</td>
+            <td>${collegeTotalPublications}</td>
+          `;
+          universityBody.appendChild(row);
+        });
+
+        document.getElementById('totalJournals').textContent = totalJournals;
+        document.getElementById('totalBookTitles').textContent = totalBookTitles;
+        document.getElementById('total0').textContent = total0;
+        document.getElementById('totalPublications').textContent = totalJournals + totalBookTitles + total0;
+        document.getElementById('totalCitations').textContent = totalCitations;
+        document.getElementById('totalHIndex').textContent = totalHIndex;
+        document.getElementById('totalI10Index').textContent = totalI10Index;
+      }
+
+      displayUniversityData(collegeData, "all");
+    })
+    .catch(error => console.error('Error fetching data:', error));
+});
+
+// Function to hide all sections
+function hideAllSections() {
+    document.getElementById('universityHeader').style.display = 'none';
+    document.getElementById('universityTableContainer').style.display = 'none';
+    document.getElementById('universityPublicationsPieChart').style.display = 'none';
+    document.getElementById('universityChart').style.display = 'none';
+    document.getElementById('universityChartNew').style.display = 'none';
+    document.getElementById('college-info').style.display = 'none';
+    document.getElementById('collegeChart').style.display = 'none';
+    document.getElementById('collegePublicationsPieChart').style.display = 'none';
+    document.getElementById('department-info').style.display = 'none';
+    document.getElementById('departmentChart').style.display = 'none';
+    document.getElementById('departmentPublicationsPieChart').style.display = 'none';
+    document.getElementById('selected-staff').style.display = 'none';
+    document.getElementById('citationsChart').style.display = 'none';
+    document.getElementById('publicationsPieChart').style.display = 'none';
+}
+
+// Function to show university info
+function showUniversityInfo() {
+    hideAllSections();
+    document.getElementById('universityHeader').style.display = 'block';
+    document.getElementById('universityTableContainer').style.display = 'block';
+    document.getElementById('universityPublicationsPieChart').style.display = 'block';
+    document.getElementById('universityChart').style.display = 'block';
+    document.getElementById('universityChartNew').style.display = 'block';
+}
+
+// Function to show college info
+function showCollegeInfo() {
+    hideAllSections();
+    document.getElementById('college-info').style.display = 'block';
+    document.getElementById('collegeChart').style.display = 'block';
+    document.getElementById('collegePublicationsPieChart').style.display = 'block';
+}
+
+// Function to show department info
+function showDepartmentInfo() {
+    hideAllSections();
+    document.getElementById('department-info').style.display = 'block';
+    document.getElementById('departmentChart').style.display = 'block';
+    document.getElementById('departmentPublicationsPieChart').style.display = 'block';
+}
+
+// Function to show staff info
+function showStaffInfo() {
+    hideAllSections();
+    document.getElementById('selected-staff').style.display = 'block';
+    document.getElementById('citationsChart').style.display = 'block';
+    document.getElementById('publicationsPieChart').style.display = 'block';
+}
+
+// Event listeners for select elements
+document.getElementById('college').addEventListener('change', function() {
+    if (this.value) {
+        showCollegeInfo();
+    } else {
+        showUniversityInfo();
+    }
+});
+
+document.getElementById('department').addEventListener('change', function() {
+    if (this.value) {
+        showDepartmentInfo();
+    } else {
+        showUniversityInfo();
+    }
+});
+
+document.getElementById('staff').addEventListener('change', function() {
+    if (this.value) {
+        showStaffInfo();
+    } else {
+        showUniversityInfo();
+    }
+});
+
+// Initially show university info
+document.addEventListener('DOMContentLoaded', () => {
+    showUniversityInfo();
+});
 
 
   </script>
