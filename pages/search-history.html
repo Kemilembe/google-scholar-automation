@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="search-history-page" class="page">
+        <h2>Search History</h2>
+        <input type="text" id="search-filter" placeholder="Filter search history...">
+        <table>
+          <thead>
+            <tr>
+              <th>Search Term</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="history-content">
+            <!-- Search history will be dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+      
+      <script>
+        const searchHistory = [
+          {term: 'machine learning', date: '2023-09-01'},
+          {term: 'data science', date: '2023-09-02'},
+          // Load previous search terms here dynamically
+        ];
+      
+        function renderSearchHistory() {
+          const historyContent = document.getElementById('history-content');
+          historyContent.innerHTML = searchHistory.map(history => 
+            `<tr><td>${history.term}</td><td>${history.date}</td></tr>`
+          ).join('');
+        }
+        renderSearchHistory();
+      </script>
+      
+</body>
+</html>

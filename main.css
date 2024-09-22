@@ -45,20 +45,17 @@ body.dark{
 
 /*====sidebar===*/
 
-.sidebar{
+.sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
+  left: -250px; /* Hidden state (moved to the left) */
   height: 100%;
   width: 250px;
-  padding: 10px 14px;
+  padding: 20px 14px;
   background: var(--sidebar-color);
-  transition: var(--tran-05);
-  z-index: 100;
+  transition: all .5s ease; /* Smooth transition when opening/closing */
+  z-index: 100; /* Ensure it stays above other content */
 }
-.sidebar.close{
-  width: 88px;
-}
+
 
 /*====reusable CSS======*/
 .sidebar .text{
@@ -69,9 +66,7 @@ body.dark{
   white-space: nowrap;
   opacity: 1;
 }
-.sidebar.close .text{
-  opacity: 0;
-}
+
 
 .sidebar .image{
   min-width: 60px;
@@ -138,10 +133,7 @@ header .image-text .header-text{
   font-size: 22px;
   transition: var(--tran-03);
 }
-.sidebar.close header .toggle{
-  transform: translateY(-50%);
- 
-}
+
 
 body.dark .sidebar header .toggle{
   transform: rotate(180deg);
@@ -197,6 +189,7 @@ body.dark .sidebar li a:hover .text{
 }
 .menu-bar .mode{
   position: relative;
+  bottom: -60px;
   border-radius: 6px;
   background: var(--primary-color-light);
 }
@@ -259,6 +252,53 @@ body.dark .switch::before{
 
 }
 
+#check{
+  display: none;
+
+}
+label #btn, label #cancel{
+  position: absolute;
+  cursor: pointer;
+  background: var(--blue);
+  border-radius: 3px;
+}
+label #btn{
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 4px 9px;
+  transition: all .5s;
+
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 15px;
+  font-size: 20px;
+  color: white;
+  padding: 3px 8px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar {
+  left: 0; /* Move it into view */
+}
+
+/* Adjust button position for toggling */
+#check:checked ~ label #btn {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label #cancel {
+  left: 215px;
+}
+
+#check:checked ~ .home{
+  left: 88px;
+  width: calc(100% - 88px);
+}
 
 .wrapper {
   display: flex;
@@ -456,58 +496,54 @@ body.dark .filter .pub .item a:hover {
   height: 100vh;
   width: calc(100% - 250px);
   background: var(--body-color);
-  transition: var(--tran-03);
+  transition: all .5s ease;
   justify-content: center;
   align-items: center;
 }
 
-.sidebar.close~ .home{
-  left: 88px;
-  width: calc(100% - 88px);
+
+#check:checked ~ .home{
+  margin-left: 250px;
+
 }
 .publication {
-  /* Remove absolute positioning and fixed dimensions */
   position: relative;
   transform: translateX(10px) translateY(240px);
   width: auto;
-  max-width: 75%; /* Allow the container to fill available space */
-  flex-grow: 1;
-  max-height: fit-content;
+  max-width: 75%;
+  height: 450px;
+  background: white;
   overflow-y: scroll;
   overflow-x: scroll;
-  background: white;
-  flex-grow: 1; /* Allow the content area to grow and take up the remaining space */
-  transition: all 0.3s ease;
-  height: 450px;
   border: 2px solid white;
-   /* Allow the container to grow with its parent */
-  /* ... other styles ... */
+  transition: all 0.3s ease;
 }
 
-/* Remove unnecessary styles */
 .publication .table {
-  width: 100%;
+  width: 800px; /* Set a fixed width for the table */
   border-collapse: collapse;
-  table-layout: fixed; /* Ensures fixed width for columns */
-  /* ... other styles ... */
+  table-layout: fixed; /* Ensures columns have fixed widths */
 }
+
 .publication .table th,
-.publication .table td{
-  width: 200px;
+.publication .table td {
+  width: 200px; /* Ensure each column has a fixed width */
   border: 2px solid black;
   padding: 8px;
   text-align: left;
-  overflow: hidden; /* Hides overflowed text */
-  text-overflow: ellipsis; /* Adds ellipsis (...) */
-  white-space: nowrap; /* Prevents text from wrapping */
-  cursor: pointer; /* Changes cursor to pointer on hover */
+  overflow: hidden; /* Prevent overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  cursor: pointer; /* Pointer on hover */
 }
+
 .publication .table thead th {
-  position: sticky; /* Make the header sticky */
-  top: 0; /* Stick the header to the top */
-  background-color: #f1f1f1; /* Background color of the sticky header */
-  z-index: 1; /* Ensure the header stays above the table body */
-  }
+  position: sticky;
+  top: 0;
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+
 
 /* Adjust column width based on screen size */
 @media (max-width: 1200px) {
@@ -1004,6 +1040,16 @@ button:active {
   }
 }
 
+.graphs-container {
+  width: 100%;
+  height: 300px; /* Adjust this as needed */
+  transform: translateX(10px) translateY(300px);
+}
+
+canvas {
+  max-width: 100%;
+  height: 100%;
+}
 
 
 

@@ -9,94 +9,88 @@
 </head>
 <body>
   
-
-    <nav class="sidebar close">
-     <header>
-       <div class="image-text">
-         <span class="image">
-          <img src="C:\Users\Admin\application\images\logo.png" alt="">
-         </span>
-         <div class="text header-text">
-           <span class="name">Researchers Cafe</span>
-           <span class="profession">Corner</span>
-         </div>
-       </div>
-
-       <i class='bx bx-chevron-right toggle'></i>
-     </header>
-     <div class="menu-bar">
-       <div class="menu">
-        <li class="search-box">
-          <i class='bx bx-search icon' ></i>
-          <input type="search" placeholder="Search....">
-        </li>
-        <ul class="menu-links">
-          <ul class="menu-links">
-            <li class="nav-links">
-                <a href="#" id="home-nav">
-                    <i class='bx bx-home icon'></i>
-                    <span class="text nav-text">Home</span>
-                </a>
-            </li>
-        
-            <li class="nav-links">
-                <a href="#" id="history-nav">
-                    <i class='bx bx-history icon'></i>
-                    <span class="text nav-text">Search History</span>
-                </a>
-            </li>
-        
-            <li class="nav-links">
-                <a href="#" id="report-nav">
-                    <i class='bx bxs-report icon'></i>
-                    <span class="text nav-text">Report</span>
-                </a>
-            </li>
-
-        
-            <li class="nav-links">
-                <a href="#" id="user-nav">
-                    <i class='bx bx-user-plus icon'></i>
-                    <span class="text nav-text">Users</span>
-                </a>
-            </li>
- 
-        
-            <li class="nav-links">
-                <a href="#" id="settings-nav">
-                    <i class='bx bx-cog icon'></i>
-                    <span class="text nav-text">Settings</span>
-                </a>
-            </li>
-        </ul>
-        
-        
-
-
-
-
-      </div>
-       <div class="bottom-content">
-         <li class="nav-links">
-           <a href="#">
-             <i class='bx bx-log-out icon' ></i>
-             <span class="text nav-text">Sign Out</span>
-           </a> 
-         </li>
-         <li class="mode">
-           <div class="moon-sun">
-             <i class='bx bxs-moon icon moon' ></i>
-             <i class='bx bx-sun icon sun' ></i>
-           </div>
-           <span class="mode-text text">Dark Mode</span>
-           <div class="toggle-switch">
-             <span class="switch"></span>
-           </div>
-          </li>
-
+  <input type="checkbox" id="check">
+  <label for="check">
+      <i class='bx bx-menu icon' id="btn"></i>
+      <i class='bx bx-x icon' id="cancel"></i>
+  </label>
+  <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+           <img src="C:\Users\Admin\application\images\logo.png" alt="">
+          </span>
+          <div class="text header-text">
+            <span class="name">ResearchersCafe</span>
+            <span class="profession">Corner</span>
+          </div>
         </div>
-     </div>
-   </nav>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+   
+         <ul class="menu-links">
+           <ul class="menu-links">
+             <li class="nav-links">
+                 <a href="#" id="home-nav">
+                     <i class='bx bx-home icon'></i>
+                     <span class="text nav-text">Home</span>
+                 </a>
+             </li>
+         
+             <li class="nav-links">
+                 <a href="#" id="history-nav">
+                     <i class='bx bx-history icon'></i>
+                     <span class="text nav-text">Search History</span>
+                 </a>
+             </li>
+         
+             <li class="nav-links">
+                 <a href="#" id="report-nav">
+                     <i class='bx bxs-report icon'></i>
+                     <span class="text nav-text">Report</span>
+                 </a>
+             </li>
+ 
+         
+             <li class="nav-links">
+                 <a href="#" id="user-nav">
+                     <i class='bx bx-user-plus icon'></i>
+                     <span class="text nav-text">Users</span>
+                 </a>
+             </li>
+  
+         
+             <li class="nav-links">
+                 <a href="#" id="settings-nav">
+                     <i class='bx bx-cog icon'></i>
+                     <span class="text nav-text">Settings</span>
+                 </a>
+             </li>
+         </ul>
+         
+       </div>
+        <div class="bottom-content">
+          <li class="nav-links">
+            <a href="#">
+              <i class='bx bx-log-out icon' ></i>
+              <span class="text nav-text">Sign Out</span>
+            </a> 
+          </li>
+          <li class="mode">
+            <div class="moon-sun">
+              <i class='bx bxs-moon icon moon' ></i>
+              <i class='bx bx-sun icon sun' ></i>
+            </div>
+            <span class="mode-text text">Dark Mode</span>
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+           </li>
+ 
+         </div>
+      </div>
+    </nav>
    <div class="home">
     <div id="selected-staff">
       <img id="staff-image" src="" alt="Staff Image" style="display:none;" width="150" height="150">
@@ -200,95 +194,7 @@
               <button id="exportStaffPDF">Export as PDF</button>
           </div>
       </div>
-  
-      <!-- Summary Table -->
-      <div class="summary-table">
-        <h3>Summary</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Total Citations</th>
-                    <th>H Index</th>
-                    <th>I10 Index</th>
-                    <th>Total Journals</th>
-                    <th>Total NaN</th>
-                    <th>Total BookTitle</th>
-                    <th>Overall Total Publications</th>
-                </tr>
-            </thead>
-            <tbody id="summary-tbody">
-                <!-- Summary data will be inserted here -->
-            </tbody>
-        </table>
-    </div>
-  </div>
 
-  <div class="departmentSummary">
-    <h2>Department Summary</h2>
-    <table class="summaryTable">
-      <thead>
-        <tr>
-          <th>Total Staff</th>
-          <th>Total Citations</th>
-          <th>Total h_index</th>
-          <th>Total i10_index</th>
-          <th>Total Journals</th>
-          <th>Total BookTitles</th>
-          <th>Total Unknown</th>
-          <th>Total Publications</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="deptTotalStaff">0</td>
-          <td id="deptTotalCitations">0</td>
-          <td id="deptTotalHIndex">0</td>
-          <td id="deptTotalI10Index">0</td>
-          <td id="deptTotalJournalsSummary">0</td>
-          <td id="deptTotalBookTitlesSummary">0</td>
-          <td id="deptTotalNaNSummary">0</td>
-          <td id="deptTotalPublicationsSummary">0</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="collegeSummaryTable">
-    <table id="collegeSummaryTable">
-      <thead>
-        <tr>
-          <th>Total Departments</th>
-          <th>Total Staffs</th>
-          <th>Total Citations</th>
-          <th>Total H-Index</th>
-          <th>Total i10-Index</th>
-          <th>Total Journals</th>
-          <th>Total Book Titles</th>
-          <th>Total NaN</th>
-          <th>Total Publications</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="totalDepartments"></td>
-          <td id="totalStaffs"></td>
-          <td id="totalCitations"></td>
-          <td id="totalHIndex"></td>
-          <td id="totali10Index"></td>
-          <td id="totalJournals"></td>
-          <td id="totalBookTitles"></td>
-          <td id="totalNaN"></td>
-          <td id="totalPublications"></td>
-        </tr>
-      </tbody>
-    </table>
-    
-  </div>
-  
-  
-  
-  
-   
       <div class="filter">
        <aside>
             <img src="C:\Users\Admin\new-electron-app\images\me.jpeg" alt="">
@@ -371,9 +277,15 @@
   <!-- Staff, Department, and College data will be displayed here -->
 </div>
 
+<div class="graphs-container">
+  <h3>Citations per Year</h3>
+  <canvas id="citationsChart"></canvas>
+</div>
+
+
 
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -391,19 +303,10 @@
 
     const body = document.querySelector("body"),
           sidebar = body.querySelector(".sidebar"),
-          toggle = body.querySelector(".toggle"),
-          searchBtn = body.querySelector(".search-box"),
+          toggle = body.querySelector(".btn"),
           modeSwitch = body.querySelector(".toggle-switch"),
           modeText = body.querySelector(".mode-text");
           home = body.querySelector(".home"),
-
-          toggle.addEventListener("click",()=>{
-            sidebar.classList.toggle("close");
-          });
-          searchBtn.addEventListener("click",()=>{
-            sidebar.classList.remove("close");
-          });
-
           modeSwitch.addEventListener("click",()=>{
             body.classList.toggle("dark");
 
@@ -720,46 +623,17 @@ function fetchPublications(staffName, selectedYear = '') {
                 filteredData = filteredData.filter(publication => publication.year == selectedYear);
             }
 
-            // Initialize summary variables
-            let totalCitations = 0;
-            let hIndex = null;
-            let i10Index = null;
-            let totalJournals = 0;
-            let totalBooktitle = 0;
-            let totalNaN = 0;
-
+            // Check if there is data to display
             if (filteredData.length > 0) {
                 let tableData = "";
-
                 filteredData.forEach((values) => {
-                    // Update summary variables
-                    if (!isNaN(values.title_cites)) {
-                        totalCitations += parseInt(values.title_cites, 10);
-                    }
-                    if (!hIndex) {
-                        hIndex = values.h_index;
-                    }
-                    if (!i10Index) {
-                        i10Index = values.i10_index;
-                    }
-                    if (values.journal && values.journal !== "NaN") {
-                        totalJournals++;
-                    }
-                    if (values.booktitle && values.booktitle !== "NaN") {
-                        totalBooktitle++;
-                    }
-                    if ((!values.journal || values.journal === "NaN") && 
-                        (!values.booktitle || values.booktitle === "NaN")) {
-                        totalNaN++;
-                    }
-
                     tableData += `
                         <tr>
                             <td>${values.title}</td>
                             <td><a href="${values.link}" target="_blank">View Paper</a></td>
                             <td>${values.year}</td>
-                            <td>${hIndex}</td>
-                            <td>${i10Index}</td>
+                            <td>${values.h_index}</td>
+                            <td>${values.i10_index}</td>
                             <td>${values.title_cites}</td>
                             <td>${values.authors}</td>
                             <td>${values.journal}</td>
@@ -770,26 +644,11 @@ function fetchPublications(staffName, selectedYear = '') {
                         </tr>
                     `;
                 });
-
-                // Display the general table data
                 document.getElementById("tbody").innerHTML = tableData;
-
-                // Display the summary data in the summary table
-                document.getElementById("summary-tbody").innerHTML = `
-                    <tr>
-                        <td>${totalCitations}</td>
-                        <td>${hIndex}</td>
-                        <td>${i10Index}</td>
-                        <td>${totalJournals}</td>
-                        <td>${totalNaN}</td>
-                        <td>${totalBooktitle}</td>
-                        <td>${filteredData.length}</td>
-                    </tr>
-                `;
+                addRowEventListeners(); // Add this line
             } else {
                 // Display a message if no data found for the selected year
                 document.getElementById("tbody").innerHTML = '<tr><td colspan="13">No publications found for the selected year.</td></tr>';
-                document.getElementById("summary-tbody").innerHTML = '<tr><td colspan="7">No data available for summary.</td></tr>';
             }
         })
         .catch((error) => {
@@ -801,17 +660,6 @@ function fetchPublications(staffName, selectedYear = '') {
             document.getElementById("spinner").style.display = "none";
         });
 }
-
-// Add click event listeners for row expansion
-document.addEventListener("DOMContentLoaded", function () {
-  const rows = document.querySelectorAll(".publication table tbody tr");
-
-  rows.forEach((row) => {
-    row.addEventListener("click", () => {
-      row.classList.toggle("expanded");
-    });
-  });
-});
 
 
 // JavaScript to handle the dropdown functionality
@@ -879,53 +727,50 @@ fetch(apiUrl)
   })
   .catch(error => console.error('Error fetching data:', error));
 
+// Function to calculate total publications for each staff member
+function calculateTotalPublications(staffMember) {
+    return staffMember.publications.journals +
+           staffMember.publications.books +
+           staffMember.publications.booktitles;
+}
 
-  
-// Fetch data from the API
-fetch(apiUrl)
-  .then(response => response.json())
-  .then(data => {
-    // Initialize an object to hold counts for each staff
-    const staffCounts = {};
-
-    data.forEach(publication => {
-      const staffName = publication.full_name;
-
-      // Initialize the staff entry if it does not exist
-      if (!staffCounts[staffName]) {
-        staffCounts[staffName] = {
-          totalJournals: 0,
-          totalBookTitles: 0,
-          totalNaN: 0
-        };
-      }
-
-      // Update counts for the staff
-      if (publication.journal && publication.journal !== 'NaN') {
-        staffCounts[staffName].totalJournals += 1;
-      }
-
-      if (publication.booktitle && publication.booktitle !== 'NaN') {
-        staffCounts[staffName].totalBookTitles += 1;
-      }
-
-      if (publication.journal === 'NaN' && publication.booktitle === 'NaN') {
-        staffCounts[staffName].totalNaN += 1;
-      }
+// Function to rank staff by total publications
+function rankStaffByPublications(staffList) {
+    // Add total publications to each staff member
+    staffList.forEach(staffMember => {
+        staffMember.totalPublications = calculateTotalPublications(staffMember);
     });
 
-    // Log the results for each staff
-    for (const staffName in staffCounts) {
-      const counts = staffCounts[staffName];
-      console.log(`Staff: ${staffName}`);
-      console.log(`  Total Journals: ${counts.totalJournals}`);
-      console.log(`  Total Book Titles: ${counts.totalBookTitles}`);
-      console.log(`  Total NaN in both: ${counts.totalNaN}`);
-    }
-  })
-  .catch(error => console.error('Error fetching data:', error));
+    // Sort staff based on total publications (highest first)
+    staffList.sort((a, b) => b.totalPublications - a.totalPublications);
 
-// Example API endpoint
+    // Display ranking on the console
+    console.log("Staff Ranking by Total Publications:");
+    staffList.forEach((staffMember, index) => {
+        console.log(`#${index + 1}: ${staffMember.name}`);
+        console.log(`  Journals: ${staffMember.publications.journals}`);
+        console.log(`  Books: ${staffMember.publications.books}`);
+        console.log(`  Book Titles: ${staffMember.publications.booktitles}`);
+        console.log(`  Total Publications: ${staffMember.totalPublications}`);
+    });
+}
+
+// Function to fetch data from the API and rank the staff
+function fetchAndRankStaff() {
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Assuming the API returns a list of staff members with their publications
+            rankStaffByPublications(data.staff);
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+        });
+}
+
+// Call the function to fetch data and rank the staff
+fetchAndRankStaff();
+
 
 // Example API endpoint
 
@@ -1180,13 +1025,13 @@ const departmentData = {
 // Define departmentData with relevant department and staff data
 
 // Define departmentData with relevant department and staff data
-// Define departmentData with relevant department and staff data
+
 
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
 
-    // Function to display department data and summary
+    // Function to display department data based on selected department and year
     function displayDepartmentData(departmentName, selectedYear = "all") {
       const departmentInfo = departmentData[departmentName];
       if (!departmentInfo) {
@@ -1194,33 +1039,20 @@ fetch(apiUrl)
         return;
       }
 
-      // Initialize department-wide totals
       let deptTotalJournals = 0;
       let deptTotalBookTitles = 0;
       let deptTotalNaN = 0;
       let deptTotalPublications = 0;
-      let deptTotalCitations = 0;
-      let deptTotalHIndex = 0;
-      let deptTotalI10Index = 0;
 
-      // To track h_index and i10_index per staff
-      const staffHIndex = {};
-      const staffI10Index = {};
-
-      // Reset the departmentBody table
       const departmentBody = document.getElementById('departmentBody');
       departmentBody.innerHTML = ''; // Clear any existing rows
 
       const staffNames = departmentInfo.staff;
-      if (!staffNames || !Array.isArray(staffNames)) {
+      if (!staffNames) {
         console.error(`No staff found in departmentData for "${departmentName}".`);
         return;
       }
 
-      // Display the total number of staff
-      document.getElementById('deptTotalStaff').textContent = staffNames.length;
-
-      // Initialize a structure to hold counts per staff
       const staffCounts = {};
 
       // Filter publications by the selected year
@@ -1228,87 +1060,51 @@ fetch(apiUrl)
         ? data 
         : data.filter(publication => publication.year.toString() === selectedYear);
 
-      // Process each publication
       filteredData.forEach(publication => {
         const staffName = publication.full_name;
 
         if (staffNames.includes(staffName)) {
-          // Initialize counts for the staff if not already done
           if (!staffCounts[staffName]) {
             staffCounts[staffName] = {
               totalJournals: 0,
-              totalConferences: 0,
+              totalBookTitles: 0,
               totalNaN: 0,
               totalPublications: 0
             };
           }
 
-          // Count valid journals
           if (publication.journal && publication.journal !== 'NaN') {
             staffCounts[staffName].totalJournals += 1;
             deptTotalJournals += 1;
           }
 
-          // Count valid conferences (assuming 'booktitle' represents conferences)
           if (publication.booktitle && publication.booktitle !== 'NaN') {
-            staffCounts[staffName].totalConferences += 1;
+            staffCounts[staffName].totalBookTitles += 1;
             deptTotalBookTitles += 1;
           }
 
-          // Count NaN cases where both journal and booktitle are 'NaN'
-          if ((publication.journal === 'NaN' || !publication.journal) && 
-              (publication.booktitle === 'NaN' || !publication.booktitle)) {
+          if (publication.journal === 'NaN' && publication.booktitle === 'NaN') {
             staffCounts[staffName].totalNaN += 1;
             deptTotalNaN += 1;
           }
 
-          // Increment total publications
-          staffCounts[staffName].totalPublications += 1;
+          staffCounts[staffName].totalPublications =
+            staffCounts[staffName].totalJournals +
+            staffCounts[staffName].totalBookTitles +
+            staffCounts[staffName].totalNaN;
+
           deptTotalPublications += 1;
-
-          // Sum citations, skipping NaN
-          if (publication.title_cites && !isNaN(publication.title_cites)) {
-            deptTotalCitations += parseInt(publication.title_cites, 10);
-          }
-
-          // Collect h_index, skipping NaN, and count each staff once
-          if (!staffHIndex.hasOwnProperty(staffName)) {
-            if (publication.h_index && !isNaN(publication.h_index)) {
-              staffHIndex[staffName] = parseInt(publication.h_index, 10);
-              deptTotalHIndex += staffHIndex[staffName];
-            } else {
-              // Mark as processed to avoid reprocessing
-              staffHIndex[staffName] = null;
-            }
-          }
-
-          // Collect i10_index, skipping NaN, and count each staff once
-          if (!staffI10Index.hasOwnProperty(staffName)) {
-            if (publication.i10_index && !isNaN(publication.i10_index)) {
-              staffI10Index[staffName] = parseInt(publication.i10_index, 10);
-              deptTotalI10Index += staffI10Index[staffName];
-            } else {
-              // Mark as processed to avoid reprocessing
-              staffI10Index[staffName] = null;
-            }
-          }
         }
       });
 
       // Display the data for each staff member
-      for (const staffName of staffNames) {
-        const counts = staffCounts[staffName] || {
-          totalJournals: 0,
-          totalConferences: 0,
-          totalNaN: 0,
-          totalPublications: 0
-        };
-
+      for (const staffName in staffCounts) {
+        const counts = staffCounts[staffName];
         const row = document.createElement('tr');
         row.innerHTML = `
           <td>${staffName}</td>
           <td>${counts.totalJournals}</td>
-          <td>${counts.totalConferences}</td>
+          <td>${counts.totalBookTitles}</td>
           <td>${counts.totalNaN}</td>
           <td>${counts.totalPublications}</td>
         `;
@@ -1320,27 +1116,18 @@ fetch(apiUrl)
       document.getElementById('deptTotalBookTitles').textContent = deptTotalBookTitles;
       document.getElementById('deptTotalNaN').textContent = deptTotalNaN;
       document.getElementById('deptTotalPublications').textContent = deptTotalPublications;
-
-      // Update the summary table
-      document.getElementById('deptTotalCitations').textContent = deptTotalCitations;
-      document.getElementById('deptTotalHIndex').textContent = deptTotalHIndex;
-      document.getElementById('deptTotalI10Index').textContent = deptTotalI10Index;
-      document.getElementById('deptTotalJournalsSummary').textContent = deptTotalJournals;
-      document.getElementById('deptTotalBookTitlesSummary').textContent = deptTotalBookTitles;
-      document.getElementById('deptTotalNaNSummary').textContent = deptTotalNaN;
-      document.getElementById('deptTotalPublicationsSummary').textContent = deptTotalPublications;
     }
 
-    // Event listeners for department and year selection
+    // Event listener for department selection
     const departmentSelect = document.getElementById('department');
-    const yearSelect = document.getElementById('yearSelect');
-
     departmentSelect.addEventListener('change', function () {
       const selectedDepartment = departmentSelect.value;
-      const selectedYear = yearSelect.value;
-      displayDepartmentData(selectedDepartment, selectedYear);
+      const selectedYear = document.getElementById('yearSelect').value; // Get the selected year
+      displayDepartmentData(selectedDepartment, selectedYear); // Pass the selected year
     });
 
+    // Event listener for year selection
+    const yearSelect = document.getElementById('yearSelect');
     yearSelect.addEventListener('change', function () {
       const selectedYear = yearSelect.value;
       const selectedDepartment = departmentSelect.value;
@@ -1350,12 +1137,10 @@ fetch(apiUrl)
     });
 
     // Initial display for the first department
-    if (departmentSelect.value) {
-      displayDepartmentData(departmentSelect.value);
-    }
-
+    displayDepartmentData(departmentSelect.value);
   })
   .catch(error => console.error('Error fetching data:', error));
+
 
   const collegeData = {
   CoICT: {
@@ -1504,6 +1289,7 @@ fetch(apiUrl)
   },
 
 };
+
 fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
@@ -1520,19 +1306,9 @@ fetch(apiUrl)
       let totalBookTitles = 0;
       let totalNaN = 0;
       let totalPublications = 0;
-      let totalDepartments = 0;
-      let totalStaffs = 0;
-      let totalCitations = 0;
-      let totalHIndex = 0;
-      let totali10Index = 0;
-      let validHIndexCount = 0;  // To count valid H-index values
-      let validi10IndexCount = 0; // To count valid i10-index values
 
       const collegeBody = document.getElementById('collegeBody');
       collegeBody.innerHTML = ''; // Clear any existing rows
-
-      // Count total departments
-      totalDepartments = Object.keys(departments).length;
 
       Object.keys(departments).forEach(department => {
         const staffNames = departments[department];
@@ -1548,7 +1324,6 @@ fetch(apiUrl)
           ? data 
           : data.filter(publication => publication.year.toString() === selectedYear);
 
-        // Loop through the filtered data
         filteredData.forEach(publication => {
           const staffName = publication.full_name;
 
@@ -1558,47 +1333,23 @@ fetch(apiUrl)
                 totalJournals: 0,
                 totalBookTitles: 0,
                 totalNaN: 0,
-                totalPublications: 0,
-                citations: 0,
-                h_index: 0,
-                i10_index: 0
+                totalPublications: 0
               };
             }
 
-            // Count journals, book titles, and NaN publications
             if (publication.journal && publication.journal !== 'NaN') {
               departmentCounts[staffName].totalJournals += 1;
-              totalJournals += 1;  // Accumulate total journals for summary
+              totalJournals += 1;
             }
 
             if (publication.booktitle && publication.booktitle !== 'NaN') {
               departmentCounts[staffName].totalBookTitles += 1;
-              totalBookTitles += 1;  // Accumulate total book titles for summary
+              totalBookTitles += 1;
             }
 
             if (publication.journal === 'NaN' && publication.booktitle === 'NaN') {
               departmentCounts[staffName].totalNaN += 1;
-              totalNaN += 1;  // Accumulate NaN total for summary
-            }
-
-            // Count valid citations
-            if (publication.title_cites && publication.title_cites !== 'NaN') {
-              departmentCounts[staffName].citations += parseInt(publication.title_cites);
-              totalCitations += parseInt(publication.title_cites);
-            }
-
-            // Handle H-index (take only one valid value per staff)
-            if (publication.h_index && publication.h_index !== 'NaN' && !departmentCounts[staffName].h_index) {
-              departmentCounts[staffName].h_index = parseInt(publication.h_index);
-              totalHIndex += parseInt(publication.h_index);
-              validHIndexCount++;
-            }
-
-            // Handle i10-index (take only one valid value per staff)
-            if (publication.i10_index && publication.i10_index !== 'NaN' && !departmentCounts[staffName].i10_index) {
-              departmentCounts[staffName].i10_index = parseInt(publication.i10_index);
-              totali10Index += parseInt(publication.i10_index);
-              validi10IndexCount++;
+              totalNaN += 1;
             }
 
             departmentCounts[staffName].totalPublications =
@@ -1606,12 +1357,9 @@ fetch(apiUrl)
               departmentCounts[staffName].totalBookTitles +
               departmentCounts[staffName].totalNaN;
 
-            totalPublications += 1;  // Accumulate total publications for summary
+            totalPublications += 1;
           }
         });
-
-        // Count total staff in the department
-        totalStaffs += staffNames.length;
 
         // Display the data for each department and its staff
         for (const staffName in departmentCounts) {
@@ -1629,16 +1377,11 @@ fetch(apiUrl)
         }
       });
 
-      // Display college summary data
-      document.getElementById('totalDepartments').textContent = totalDepartments;
-      document.getElementById('totalStaffs').textContent = totalStaffs;
-      document.getElementById('totalCitations').textContent = totalCitations;
-      document.getElementById('totalHIndex').textContent = validHIndexCount > 0 ? totalHIndex : 'N/A';
-      document.getElementById('totali10Index').textContent = validi10IndexCount > 0 ? totali10Index : 'N/A';
-      document.getElementById('totalJournals').textContent = totalJournals;  // Display total journals
-      document.getElementById('totalBookTitles').textContent = totalBookTitles;  // Display total book titles
-      document.getElementById('totalNaN').textContent = totalNaN;  // Display NaN total
-      document.getElementById('totalPublications').textContent = totalPublications;  // Display total publications
+      // Update the overall totals for the college
+      document.getElementById('totalJournals').textContent = totalJournals;
+      document.getElementById('totalBookTitles').textContent = totalBookTitles;
+      document.getElementById('totalNaN').textContent = totalNaN;
+      document.getElementById('totalPublications').textContent = totalPublications;
     }
 
     // Event listener for college selection
@@ -1663,7 +1406,6 @@ fetch(apiUrl)
     displayCollegeData(collegeSelect.value);
   })
   .catch(error => console.error('Error fetching data:', error));
-
 
   document.addEventListener('DOMContentLoaded', function() {
     const collegeSelect = document.getElementById('college');
@@ -2215,9 +1957,37 @@ async function fetchYears() {
 fetchYears();
 
 
-
-
+async function fetchStaffPublications(staff) {
+  try {
+    // Replace with your actual API endpoint
+    const response = await fetch(`https://udsm-google-scholar-fastapi.onrender.com/`);
     
+    // Parse the response data
+    const data = await response.json();
+    
+    // Log the full response data to inspect its structure
+    console.log('Full API response:', data);
+    
+    // Check if publications exist
+    if (data && data.publications) {
+      // Log each publication with title, title_cites, and year to the console
+      data.publications.forEach(publication => {
+        console.log(`Title: ${publication.title}, Citations: ${publication.title_cites}, Year: ${publication.year}`);
+      });
+    } else {
+      console.error('Publications data is missing in the response.');
+    }
+    
+    return data.publications;
+  } catch (error) {
+    console.error('Error fetching publications:', error);
+  }
+}
+
+// Example: Call the function for a specific staff member (staffId)
+fetchStaffPublications('staffId123');
+
+
   </script>
 </body>
 </html>
