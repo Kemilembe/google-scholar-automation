@@ -1090,6 +1090,11 @@ canvas {
   margin: 0 auto; /* Center the chart */
   transform: translateX(10px) translateY(310px);
 }
+#universityChart {
+  width: 90%;  /* Make the chart width 100% of the parent container */
+  height: 500px; /* Set height for better visibility */
+  transform: translateX(10px) translateY(310px);
+}
 
 
 .rankedTable {
